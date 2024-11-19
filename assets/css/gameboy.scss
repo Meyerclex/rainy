@@ -1,0 +1,282 @@
+
+
+@import url(https://db.onlinewebfonts.com/c/4c19fc875e7ba1e6831129de3ab5ac0b?family=Retro+Gaming);
+@import url('https://static.zeoseven.com/zsft/279/main/result.css');
+@import url('https://static.zeoseven.com/zsft/39/main/result.css');
+@import url('https://static.zeoseven.com/zsft/129/main/result.css');
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+
+.home-page {
+  font-family: "Retro Gaming", "Uranus Pixel 11Px";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100dvh;
+  max-width: 100vw;
+  position: relative;
+  overflow: hidden;
+  background-image: url("/site/_BG__Space_Background.gif");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  margin: 0;
+
+  background-image: url('/site/_BG__Space_Background.gif');
+  background-size: auto; /* 保持图片的原始大小 */
+  background-repeat: repeat; /* 使背景图重复 */
+  background-position: top left; /* 设置背景图从页面的左上角开始 */
+  height: 100vh; /* 让页面高度为视口高度，确保背景图填满整个页面 */
+  margin: 0; /* 去除默认的边距 */
+
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    // background-image: url("https://opengameart.org/sites/default/files/oga-textures/39096/_grout%20overlay%20with%20transparency%20for%20making%20new%20versions%20in%20a%20image%20editing%20application.png");
+    background-size: 100px;
+    opacity: 0.3;
+    z-index: -1;
+  }
+}
+
+.gameboy {
+  width: 800px;
+  height: 360px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  position: relative;
+  border-radius: 10000000px;
+  background: rgb(128, 124, 126); /* 对应红色100%、绿色26%、蓝色79%的值 */
+  box-shadow: rgba(93, 50, 50, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset,
+    inset rgba(255, 255, 255, 0.3) 5px 5px 10px 0px,  /* 亮色的内阴影 */
+    inset rgba(0, 0, 0, 0.4) -10px -5px 10px 0px; /* 深色的内阴影 */
+}
+
+.arrows-container {
+  position: relative;
+  width: 112px;
+  height: 112px;
+  .left,
+  .right,
+  .top,
+  .bottom,
+  .center {
+    background-color: rgb(57, 57, 57);
+    width: 37.333px;
+    height: 37.333px;
+    position: absolute;
+    outline: 0;
+    border: 0;
+    cursor: pointer;
+  }
+  .left {
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+  }
+  .right {
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+  }
+  .top {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+  }
+  .bottom {
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+  }
+  .center {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.dashboard {
+  background-color: #9aa13c;
+  width: 350px;
+  position: relative;
+  padding: 16px;
+  display: flex;
+  aspect-ratio: 4/3;
+
+  &:after {
+    content: "";
+    position: absolute;
+    display: block;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    box-shadow: inset 4px 6px 12px 2px rgba(0, 0, 0, 0.7);
+    pointer-events: none;
+  }
+}
+
+.SiteTitle {
+  color: #000000;   /* 黑色文字 */
+  text-shadow: 4px 2px 0px rgb(77, 177, 84); /* 固体的斜下阴影，红色 */
+  text-align: center; /* 居中对齐 */
+  letter-spacing: 2px; /* 字母间距 */
+  text-transform: uppercase; /* 转换为大写字母 */
+}
+
+
+
+.schedule-table,
+.exercise-table,
+.calories,
+.personal-bests,
+.challenges,
+.activity-feed {
+  display: none;
+  flex-direction: column;
+  gap: 18px;
+  align-items: center;
+  width: 100%;
+
+  h2 {
+    margin: 0;
+  }
+  table {
+    width: 100%;
+    tr {
+      &:first-child th {
+        padding-bottom: 8px;
+        text-decoration: underline;
+      }
+      td {
+        font-size: 14px;
+      }
+      th {
+        text-align: left;
+      }
+    }
+  }
+
+  ul {
+    padding: 0;
+    margin: 0;
+    li {
+      list-style: none;
+      padding: 5px 0;
+    }
+  }
+}
+
+.profile {
+  text-align: center;
+  align-self: center;
+  margin-left: auto;
+  margin-right: auto;
+
+  h2 {
+    margin-bottom: 0;
+  }
+
+  p {
+    margin-top: 8px;
+    margin-bottom: 8px;
+  }
+
+  span {
+    margin-top: auto;
+    font-size: 12px;
+    animation: blink 1s steps(5, start) infinite;
+  }
+}
+
+.Warning {
+  color: #640116;
+}
+
+.titles-container {
+  width: 100%;
+  display: none;
+  flex-direction: column;
+  gap: 8px;
+  margin-left: 24px;
+
+  span {
+    position: relative;
+    font-size: 18px;
+    &.active:after {
+      content: "►";
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: -24px;
+      animation: blink 1s steps(6, start) infinite;
+    }
+  }
+}
+
+.buttons-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  button {
+    outline: 0;
+    border: 0;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background: linear-gradient(to bottom, #b30f42 0%, #640116 100%);
+    border-top: 4px solid #d74f73;
+    cursor: pointer;
+    position: relative;
+    color: white;
+
+    &:before {
+      content: "";
+      position: absolute;
+      width: 21px;
+      height: 9px;
+      top: 0;
+      right: 15px;
+      bottom: 60px;
+      left: 15px;
+      box-shadow: inset 0 8px 0px -4px rgba(255, 255, 255, 0.4);
+      border-radius: 100%;
+    }
+  }
+}
+
+@keyframes blink {
+  to {
+    visibility: hidden;
+  }
+}
+
+.a-but,
+.b-but {
+  font-family: "Retro Gaming", "Uranus Pixel 11Px";
+}
+

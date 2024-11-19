@@ -1,0 +1,282 @@
+{{ define "main" }}
+{{ partial "back_link.html" .}}
+<!--
+___________________________________________________________________________
+ 
+▶ PAGE MADE BY RACHEL @ ALMIGHTYONE.TUMBLR.COM
+ 
+[PAGE #2] ABOUT PAGE
+If you have any questions, go to 7th-district.tumblr.com for help.
+ 
+DO NOT REMOVE THE CREDIT OR DELETE THIS MESSAGE!
+___________________________________________________________________________
+-->
+ 
+<html>
+<head>
+ 
+<title>{Title}</title>
+<link rel="shortcut icon" href="{Favicon}" />
+<link href="style-my-tooltips.css" rel="stylesheet" type="text/css" />
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script><script type="text/javascript" src="http://static.tumblr.com/7qjmkr5/IUmmdsy41/jquery.style-my-tooltips.js"></script><script>(function($){$(document).ready(function(){$("[title]").style_my_tooltips();});})(jQuery);</script>
+ 
+<link href='http://fonts.googleapis.com/css?family=Audiowide' rel='stylesheet' type='text/css'>  <!-- font-family: 'Audiowide', cursive; -->
+ 
+<link href='http://fonts.googleapis.com/css?family=Rationale' rel='stylesheet' type='text/css'> <!-- font-family: 'Rationale', sans-serif; -->
+ 
+<style type="text/css">  
+ 
+::-webkit-scrollbar {
+    width:6px;
+    height:7px;
+    }
+ 
+::-webkit-scrollbar-track-piece {
+    background-color:#121212;
+    }
+::-webkit-scrollbar-thumb {
+    background-color:#e5b4b0;
+    box-shadow:0px 0px 5px #888;
+    }    
+ 
+body {
+    /* YOUR BACKGROUND IMAGE */
+    background:white;
+    background-image: url("/site/_BG__Space_Background.gif");
+    background-attachment:fixed;
+    background-repeat:repeat;
+    padding:0;
+    margin:0;
+    word-wrap:break-word;
+}
+ 
+body a{text-decoration:none;}
+ul {list-style-type:square;}
+ 
+#content {
+    position:absolute;
+    border:0px solid white;
+    padding-bottom:50px;
+    top:15%;
+    left:50%;
+    height:auto;
+    width:800px;
+    margin-left:-400px;
+}
+ 
+/* YOUR SIDEBAR IMAGE */
+#content IMG {
+    float:left;
+    width:150px;
+    height:auto;
+    padding:5px;
+    background:#0e1420; /* THE BACKGROUND COLOR OF YOUR IMAGE */
+    border:2px solid #85edb5; /* THE BORDER COLOR */
+    z-index:9;
+  margin-left:-100px;
+    box-shadow:0px 0px 5px #888;
+}
+         
+ 
+/* TITLE */
+#title {
+    text-align:right;
+    width:630px;
+    padding-right:190px;
+    padding-left:40px;
+    border:0px solid white; 
+    font-family: 'Rationale', sans-serif;
+    font-size:40px;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    color:#eee;
+    margin-left:-30px;
+    margin-bottom:-30px;
+    text-shadow:0px 0px 5px #888;
+    border-bottom:2px solid #e5b4b0; /*TITLE UNDERLINE */
+}
+@import url(https://db.onlinewebfonts.com/c/4c19fc875e7ba1e6831129de3ab5ac0b?family=Retro+Gaming);
+@import url('https://static.zeoseven.com/zsft/279/main/result.css');
+@import url('https://static.zeoseven.com/zsft/39/main/result.css');
+@import url('https://static.zeoseven.com/zsft/129/main/result.css');
+#info {
+    margin-left:95px;
+    margin-top:50px;
+    padding:10px;
+    width:620px;
+    color:#e8ded2; /* BODY COLOR TEXT WHERE ALL YOUR INFO/BIO IS */
+    text-shadow:0px 0px 2px #565656;
+    font-family:consolas, "Uranus Pixel 11Px";
+    font-size:16px;
+    line-height:130%;
+    background:#262626;
+    background-image:url('http://24.media.tumblr.com/tumblr_lzvjakQDzV1qhvdofo5_500.jpg');
+    box-shadow:0px 0px 4px #565656;
+}
+ 
+/* LINKS ITALICS AND BOLD */
+#info a{
+    color:#e5b4b0;
+-webkit-transition: all 0.4s ease;
+}
+ 
+#info a:hover {
+    color:#fff;
+-webkit-transition: all 0.4s ease;
+}
+ 
+#info i {
+    font-weight:bold;
+    font-style:italic;
+    color:#d7ba83; /* <--- italics */
+}
+ 
+#info b, strong {
+    font-weight:bold;
+    color:#6e8f9d;
+}
+ 
+/* BORDERS */
+.topleft{
+    position:fixed;
+    top:0px;
+    left:0px;
+    width: 0px;
+height: 0px;
+border-style: solid;
+border-width: 90px 90px 0 0;
+border-color: #85edb5 transparent transparent transparent;} /* CHANGE THE HEX CODE #85EDB5 TO WHATEVER SCREEN BORDER COLOR YOU WANT. BE SURE TO ALSO DO THAT FOR TOPRIGHT, BOTTOMRIGHT, AND BOTTOMLEFT! */
+.topright{
+    position:fixed;
+    top:0px;
+    right:0px;
+    width: 0px;
+height: 0px;
+border-style: solid;
+border-width: 0 90px 90px 0;
+border-color: transparent #85edb5 transparent transparent;}
+.bottomright{
+    position:fixed;
+    bottom:0px;
+    right:0px;
+    width: 0px;
+height: 0px;
+border-style: solid;
+border-width: 0 0 90px 90px;
+border-color: transparent transparent #85edb5 transparent;}
+.bottomleft{
+    position:fixed;
+    bottom:0px;
+    left:0px;
+    width: 0px;
+height: 0px;
+border-style: solid;
+border-width: 90px 0 0 90px;
+border-color: transparent transparent transparent #85edb5;}
+ 
+#line{
+    background:#85edb5;
+position:absolute;
+width:1100px;
+height:5px;
+margin-top:33px;
+margin-left:-160px;
+box-shadow:0px 0px 5px #888;
+z-index:-1;
+}
+ 
+/* LINKS ON THE RIGHT */
+#links {
+    float:right;
+    margin-top:10px;
+    margin-right:-80px;
+    background-image:url('http://24.media.tumblr.com/tumblr_lzvjakQDzV1qhvdofo5_500.jpg'); /* LINKS BACKGROUND */
+width:100px;
+padding:5px;
+height:auto;
+border:2px solid #85edb5;
+text-align:center;
+box-shadow:0px 0px 5px #888;
+}
+ 
+#links a{
+    float:right;
+    width:90px;
+    font-family: 'Rationale', sans-serif;
+    text-transform:uppercase;
+    font-size:11px;
+    letter-spacing:2px;
+    color:#fff; /* LINK TEXT */
+    text-shadow:0px 0px 5px #888;
+    border-bottom:0px solid #565656;
+    box-shadow:0px 0px 0px #888;
+    margin:4px;
+    padding:0px 0px 3px 0px;
+ 
+    transition: all 0.6s ease;
+    -moz-transition: all 0.6s ease;
+    -webkit-transition: all 0.6s ease;
+    -o-transition: all 0.6s ease;
+}
+ 
+#links a:hover{
+    color:#333; /* LINK TEXT HOVER */
+    background:#85edb5; /* LINK BACKGROUND HOVER */
+    box-shadow:0px 0px 5px #888;
+    transition: all 0.6s ease;
+    -moz-transition: all 0.6s ease;
+    -webkit-transition: all 0.6s ease;
+    -o-transition: all 0.6s ease;
+}
+ 
+ 
+#s-m-t-tooltip {
+    position:relative;
+    overflow:hidden;
+    z-index:99999;
+    max-width:200px;
+    margin:10px 0 0 10px;
+    padding:4px 6px 5px 6px;
+    font:10px consolas;
+    background:#262626;
+    border:1px solid #121212;
+    line-height:100%;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    color:#fff;
+}
+ 
+</style>
+</head>
+<body>
+ 
+
+ 
+<div id="content">
+ 
+<div id="title"> ✦ Thanks For All the Fish</div>
+ 
+<div id="line"></div>
+ 
+ 
+<div id="links">
+<a href="/">✦ return</a>
+<a href="/">jesus</a>
+<a href="/">christ</a>
+<a href="/">looks like</a>
+<a href="/">me</a>
+</div> 
+ 
+<div id="info">
+ 
+<!-- THIS IS WHERE YOU TALK ABOUT YOURSELF -->
+
+{{ partial "menu_item.html" (dict "context" . "collection" $.Site.Data.menu.entries) }}
+
+</div> <!-- info --> 
+
+</div> 
+<p></p><!-- content -->
+</body>
+</html>
+{{ end }}

@@ -1,0 +1,8 @@
+baseURL = 'http://example.org/'
+languageCode = 'en-us'
+title = 'So long, Thanks For All the Fish'
+theme = 'nostyleplease'
+
+[params.theme_config]
+appearance = "light"  # 或 "light"，"dark"
+
