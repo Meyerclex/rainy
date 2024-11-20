@@ -1,5 +1,6 @@
 ---
-title: "Nav"
+title: "Thanks for All Cats!"
 layout: "nav"
-uniqueCSS: true
+Description: "Garden rules"
 ---
+

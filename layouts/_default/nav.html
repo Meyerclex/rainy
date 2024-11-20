@@ -9,7 +9,7 @@
     --dgrey: #626F47;
     --mgold: #798645;
     --lgold: #FFB75E;
-    --mrose: #CD5C08;
+    --mrose: #ffe5d1;
     --lrose: #f49095;
     --beige: #FEFAE0;
   }
@@ -64,7 +64,7 @@
   .content h2 {
     color: var(--mrose);
     font-family: Times New Roman, serif;
-    font-size: 40px;
+    font-size: 30px;
     font-style: italic;
   }
   
@@ -150,15 +150,12 @@
     <h2 class="nav-title">{{ .Title }}</h2>
     <div class="intro-to-Rules">
     <div class="intro">
-      <p>through the thick of the misty woods, you find a mysterious stone path, lined with small wildflowers and lit lanterns. after following it for some time, the mist begins to part, and you arrive at a small garden that has been meticulously tended to, filled with blooming flowers under the moonlight.</p>
-  
-      <p>there is a signpost located just outside the old iron gates of the garden. a magic barrier prevents you from venturing forward until you read the sign...</p>
-      
-    <img src="https://platinumtulip.garden/img/gif/gateani.gif" alt="a bronze gate, with one of its doors opening." class="center">
+     
+    <img src="/cat/tuxicon2.gif" alt="a bronze gate, with one of its doors opening." class="center">
     </div>
-    <h3>garden rules:</h3>
-    <p>this is a brief overview of the rules within this realm. more detailed information can be found in the server rules.</p>
-   </div>
+    <h3> {{ .Description }} </h3>
+    {{ partial "menu_item.html" (dict "context" . "collection" $.Site.Data.menu.entries) }}
+  </div>
     <ol>
       <li>
         <p>be mindful and kind. hateful behavior is not tolerated here - no bigotry, no slurs, and so forth. additionally, please try to keep playful rudeness/aggression to a minimum. not everyone can easily tell real insults from jest, so please be mindful of that. also, if you're talking about something potentially triggering or sensitive, i'd encourage the use of spoiler tags formatted something like this: (cw: subject) ||subject goes here||, just so people can opt out from seeing something upsetting.</p>
