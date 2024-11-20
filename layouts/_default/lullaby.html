@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>✨ Lullaby Lovescape Digital Diary ✨</title>
@@ -426,7 +426,7 @@
     </div>
 
     <script>
-        
+        // Make windows draggable
         const windows = document.querySelectorAll('.window');
         windows.forEach(makeWindowDraggable);
 
@@ -463,7 +463,7 @@
             windows.forEach(win => win.style.zIndex = "1"); element.style.zIndex = "2";
         }
 
-        
+        // Window management functions
         function toggleWindow(id) {
             const window = document.getElementById(id);
             if (window.classList.contains('active')) {
@@ -487,7 +487,7 @@
             }, 300);
         }
 
-        
+        // Sparkle effect
         function createSparkle(e) {
             const sparkle = document.createElement('div');
             sparkle.style.position = 'fixed';
@@ -504,7 +504,7 @@
             if (Math.random() < 0.1) createSparkle(e);
         });
 
-        
+        // Notification system
         function showNotification(message) {
             const notification = document.createElement('div');
             notification.className = 'notification';
@@ -522,14 +522,14 @@
             }, 3000);
         }
 
-        
+        // Show welcome notification on load
         window.addEventListener('load', () => {
             setTimeout(() => {
                 showNotification('Welcome to my kawaii space! ૮ ˶ᵔ ᵕ ᵔ˶ ა');
             }, 1000);
         });
 
-        
+        // Music player functionality
         const musicControls = document.querySelectorAll('.music-control');
         let isPlaying = false;
 
@@ -544,7 +544,7 @@
             });
         });
 
-        
+        // Random floating elements
         function createFloatingElement() {
             const elements = ['🌸', '✨', '💖', '🌟', '🎀'];
             const element = document.createElement('div');
@@ -561,7 +561,7 @@
 
         setInterval(createFloatingElement, 2000);
 
-        
+        // Easter egg - click counter
         let clickCount = 0;
         document.addEventListener('click', () => {
             clickCount++;
@@ -571,7 +571,7 @@
             }
         });
 
-        
+        // Add rainbow animation
         const style = document.createElement('style');
         style.textContent = `
             @keyframes rainbow {

@@ -1,6 +1,4 @@
 ---
 title: "Welcome"
-layout: "welcome"
+layout: "lullaby"
 ---
-
-![](https://nelsnetcafe.com/sparklecat.gif)

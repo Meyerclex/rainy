@@ -1,0 +1,42 @@
+.lullaby-page {
+    --primary: #ff69b4;
+    --secondary: #ffd6e9;
+    --accent: #ffbaf1;
+    --text: #665566;
+    --window-bg: rgba(255, 255, 255, 0.95);
+}
+
+.lullaby-page * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.lullaby-page body {
+    background-color: var(--secondary);
+    font-family: 'Comic Sans MS', cursive;
+    overflow-x: hidden;
+    min-height: 100vh;
+    background-image: 
+        radial-gradient(#fff 20%, transparent 20%),
+        radial-gradient(#fff 20%, transparent 20%);
+    background-position: 0 0, 50px 50px;
+    background-size: 100px 100px;
+}
+
+/* 其他 CSS */
+.lullaby-page .desktop-icons {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    z-index: 1;
+}
+
+.lullaby-page .desktop-icon {
+    /* 其他样式 */
+}
+
+/* 更多针对 lullaby-page 的样式 */
