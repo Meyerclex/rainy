@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jokes on So long, Thanks For All the Fish</title>
+    <link>http://localhost:1313/tags/jokes/</link>
+    <description>Recent content in Jokes on So long, Thanks For All the Fish</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 28 Aug 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/jokes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>人生差生的八月份怎么过</title>
+      <link>http://localhost:1313/posts/%E4%BA%BA%E7%94%9F%E5%B7%AE%E7%94%9F%E7%9A%84%E5%85%AB%E6%9C%88%E4%BB%BD%E6%80%8E%E4%B9%88%E8%BF%87/</link>
+      <pubDate>Sat, 28 Aug 2021 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/%E4%BA%BA%E7%94%9F%E5%B7%AE%E7%94%9F%E7%9A%84%E5%85%AB%E6%9C%88%E4%BB%BD%E6%80%8E%E4%B9%88%E8%BF%87/</guid>
+      <description>&lt;!-- raw HTML omitted --&gt;</description>
+    </item>
+  </channel>
+</rss>

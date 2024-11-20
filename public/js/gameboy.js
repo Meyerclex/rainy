@@ -62,7 +62,7 @@ window.addEventListener("DOMContentLoaded", () => {
       
       // 如果选择了EnterSites并点击A按钮，跳转到/welcome页面
       if (activeSectionClassName === "calories") {
-        window.location.href = "/welcome";
+        window.location.href = "/nav/";
       }
     }
   });

@@ -1,16 +1,10 @@
 [[entries]]
-title = "info"
-
-  [[entries.entries]]
-  title = "鱼鱼的家"
-
-[[entries]]
-title = "all posts"
+title = "All Posts"
 
   [entries.post_list]
   limit = 5
   show_more = true
-  show_more_text = "See archive..."
+  show_more_text = "See more..."
   show_more_url = "posts"
 
 [[entries]]

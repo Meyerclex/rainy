@@ -1,22 +1,80 @@
-{{ define "main" }}
-{{ partial "back_link.html" .}}
 
-<h1>{{ .Title }}</h1>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/satouriko/LxgwWenKai_Webfonts@v1.101/dist/LXGWWenKai-Regular.css" />
+<head>
+  <link rel="shortcut icon" type="image/x-icon" href="{{ $.Site.Params.favicon | relURL }}" />
+  {{ $options := (dict "outputStyle" "compressed" "enableSourceMap" (not hugo.IsProduction)) }}
+  {{ $sass := resources.Get "css/nav.scss" }}
+  {{ $style := $sass | css.Sass $options | resources.Fingerprint "sha512" }}
+  <link rel="stylesheet" href="{{ $style.Permalink | relURL }}" integrity="{{ $style.Data.Integrity }}" />
+  {{ if .Params.mathjax }} {{ partial "mathjax.html" . }} {{ end }}
+</head>   
+<body>
 
-{{ .Content }}
+    {{/* begin of archive heading */}}
+    <div class="post-head-wrapper-text-only">
+      {{- $type := .Type -}}
+      {{/* **** Category-wide stats **** */}}
+      {{- $scratch := newScratch -}}
+      {{- $articles_cat := (where .Site.RegularPages "Type" $type) -}}
+      {{- $articles_cat_count := len $articles_cat -}}
+      {{- range (where .Site.RegularPages "Type" $type) -}}
+        {{- $scratch.Add "allwordcount" .WordCount -}}
+      {{- end -}}  
+      {{/* end of archive heading */}}
+    </div>
 
-<!-- divide post list by year  -->
-{{ if  .Site.Params.theme_config.isListGroupByDate  }}
-    {{ range .Pages.GroupByDate "2006 Year" }}
-    <p>{{ .Key }}</p>
-    <ul>
-        {{ range .Pages }}
-            <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
-        {{ end }}
-    </ul>
-    {{ end }}
-{{ else }}
-    {{ partial "post_list.html" (dict "context" . "section" .Section)}}
-{{ end }}
+    <div class="content">
+        <p style="text-align: center;">
+          {{/*  <img src="/bluecoach/chair.gif" alt="">  */}}
+        </p>
+        <h2 class="nav-title">{{ .Title }}</h2>
+        <div class="intro-to-Rules">
+            <div class="post-body archive-body">
+                {{/* **** Yearly archive **** */}}
+                {{/* Group articles by year and loop through them */}}
+                {{- range (.Site.RegularPages.GroupByDate "2006") -}}
+                  {{/* Get articles to display, excluding hidden ones */}}
+                  {{- $articles_yearly := (where (where .Pages "Type" $type) "Params.hidden" "!=" true) -}}
+                  {{/* Count articles returned */}}
+                  {{- $articles_yearly_count := len $articles_yearly -}}
+                  {{/* Check if a proper year is returned and if it contains any articles */}}
+                  {{ if and (gt .Key 1) (gt $articles_yearly_count 0) }}
+                    {{- range $index, $value := $articles_yearly -}}
+                      {{ if not $index }}
+                        {{/* Display a header in the first loop */}}
+                        <h3 class="archive--year">{{ .Date.Format "2006" }} / {{ $articles_yearly_count }} {{ if ne $articles_cat_count 1 }}entries{{ else }}entry{{ end }}</h3>
+                        <ul>
+                      {{ end }}
+                      {{/* Display articles here */}}
+                      <li>
+                        <span class="">{{ .Date.Format "01-02" }}</span>&emsp;
+                        <a href="{{ .RelPermalink }}">
+                          {{ if .Draft }}{{ i18n "draft" }}{{ end }}{{ .Title  }}
+                        </a>
+                      </li>
+                    {{ end }}
+                    </ul>
+                  {{ end }}
+                {{ end }}
+      
+            </div>
 
-{{ end }}
+
+
+        <div id="index-content">
+        </div>
+    </div>
+    {{ $randomcat := resources.Get "js/randomcat.js" }}
+    <script src="{{ $randomcat.RelPermalink }}"></script>
+</body>
+
+<div class="post-list-container post-list-container-shadow">
+    <div class="post">
+  
+
+  
+      <div class="post-body-wrapper">
+
+      </div>
+    </div>
+  </div>
