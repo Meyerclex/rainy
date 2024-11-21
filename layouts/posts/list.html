@@ -9,7 +9,6 @@
   {{ if .Params.mathjax }} {{ partial "mathjax.html" . }} {{ end }}
 </head>   
 <body>
-
     {{/* begin of archive heading */}}
     <div class="post-head-wrapper-text-only">
       {{- $type := .Type -}}
@@ -29,6 +28,18 @@
         </p>
         <h2 class="nav-title">{{ .Title }}</h2>
         <div class="intro-to-Rules">
+            <div id="navbar">
+                <ul>
+                    <li><a href="/home/">Home</a></li>
+                    <li><a href="/about/">About</a></li>
+                    <li><a href="/link/">Friends</a></li>
+                    <li><a href="#">Link</a></li>
+                </ul>
+            </div>
+            <div class="intro">
+                <img src="/cat/tuxicon2.gif" alt="这是一只...奶牛猫..." class="center">
+            </div>
+            <!--        奶牛猫-->
             <div class="post-body archive-body">
                 {{/* **** Yearly archive **** */}}
                 {{/* Group articles by year and loop through them */}}
@@ -58,9 +69,6 @@
                 {{ end }}
       
             </div>
-
-
-
         <div id="index-content">
         </div>
     </div>
