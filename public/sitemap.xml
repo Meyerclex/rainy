@@ -236,9 +236,6 @@
     <loc>http://localhost:1313/posts/hacklibrary/</loc>
     <lastmod>2022-03-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/form/</loc>
-    <lastmod>2022-02-02T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/tags/book/</loc>
     <lastmod>2022-01-26T16:00:00+00:00</lastmod>
   </url><url>
@@ -299,9 +296,9 @@
     <loc>http://localhost:1313/posts/%E5%8D%A1%E6%B3%A2%E7%89%B9au%E8%84%91%E6%B4%9E/</loc>
     <lastmod>2020-08-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/host/</loc>
+    <loc>http://localhost:1313/home/</loc>
   </url><url>
-    <loc>http://localhost:1313/nav/</loc>
+    <loc>http://localhost:1313/host/</loc>
   </url><url>
     <loc>http://localhost:1313/welcome/</loc>
   </url>

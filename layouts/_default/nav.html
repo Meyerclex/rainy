@@ -10,41 +10,283 @@
 </head>    
 
 <body>
-<div id="box-left">
-    <div class="inner">
-        <p>Sidebar lorem ipsum dolor sit amet.</p>
-        <p>This page uses the font Indie Flower, via Google Fonts!</p>
+<div class="desktop-icons">
+    <div class="desktop-icon" onclick="toggleWindow('profile')">
+        <img src="https://files.catbox.moe/kmf4bc.gif" alt="Profile Icon">
+        <span>My Profile</span>
+    </div>
+    <div class="desktop-icon" onclick="toggleWindow('gallery')">
+        <img src="https://files.catbox.moe/3bobcc.gif" alt="Gallery Icon">
+        <span>Gallery</span>
+    </div>
+    <div class="desktop-icon" onclick="toggleWindow('blog')">
+        <img src="https://files.catbox.moe/ia8u2v.gif" alt="Blog Icon">
+        <span>Blog</span>
     </div>
 </div>
-<div class="content">
-  <!-- 蓝沙发 -->
-   <div>
-    <p style="text-align: center;">
-      {{/*  <img src="/bluecoach/chair.gif" alt="">  */}}
-    </p>
-  </div>
-  <h2 class="nav-title">{{ .Title }}</h2>
-  <!-- 蓝沙发 -->
+<div id="profile" class="window" style="top: 50px; left: 150px;">
+    <div class="window-title">
+        ✨ My Profile ✨
+        <div class="buttons">
+            <div class="button" style="background: #ffff4d;" onclick="minimizeWindow('profile')"></div>
+            <div class="button" style="background: #ff6b6b;" onclick="closeWindow('profile')"></div>
+        </div>
+    </div>
+    <div class="content">
+        <div class="profile-card">
+            <img src="https://files.catbox.moe/yscv85.gif" alt="Profile Picture" class="profile-image">
+            <div class="profile-info">
+                <h3>[Your Name]</h3>
+                <p>✨ Digital Artist</p>
+                <p>🌸 Web Developer</p>
+            </div>
+        </div>
+        <div class="social-links">
+            <a href="#" class="social-link">
+                <img src="https://files.catbox.moe/og4nft.gif" alt="Twitter">
+                Twitter
+            </a>
+            <a href="#" class="social-link">
+                <img src="https://files.catbox.moe/7tzc9c.gif" alt="Instagram">
+                Instagram
+            </a>
+            <a href="#" class="social-link">
+                <img src="https://files.catbox.moe/dtal07.gif" alt="GitHub">
+                GitHub
+            </a>
+            <a href="#" class="social-link">
+                <img src="https://files.catbox.moe/e0ep7c.gif" alt="DeviantArt">
+                DeviantArt
+            </a>
+        </div>
+    </div>
+</div>
 
-    <div class="intro-to-Rules">
-    <div class="intro">
-    <img src="/cat/tuxicon2.gif" alt="这是一只...奶牛猫..." class="center">
+<div id="gallery" class="window" style="top: 100px; left: 550px;">
+    <div class="window-title">
+        🎨 My Gallery 🎨
+        <div class="buttons">
+            <div class="button" style="background: #ffff4d;" onclick="minimizeWindow('gallery')"></div>
+            <div class="button" style="background: #ff6b6b;" onclick="closeWindow('gallery')"></div>
+        </div>
     </div>
-<!--        奶牛猫-->
-    <h3> {{ .Description }} </h3>
-    <div id="navbar">
-      <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/about/">About</a></li>
-          <li><a href="/link/">Friends</a></li>
-          <li><a href="#">Link</a></li>
-      </ul>
-    </div>
-    {{ partial "menu_item.html" (dict "context" . "collection" $.Site.Data.menu.entries) }}
-    <div id="index-content">
-    {{ .Content }}
+    <div class="content">
+        <div class="gallery">
+            <img src="https://files.catbox.moe/cg2dzq.jpg" alt="Artwork 1">
+            <img src="https://files.catbox.moe/zwtdmj.jpg" alt="Artwork 2">
+            <img src="https://files.catbox.moe/unju81.jpg" alt="Artwork 3">
+            <img src="https://files.catbox.moe/qgkkhs.jpg" alt="Artwork 4">
+        </div>
     </div>
 </div>
-{{ $randomcat := resources.Get "js/randomcat.js" }}
-<script src="{{ $randomcat.RelPermalink }}"></script>
+
+<div id="blog" class="window" style="top: 150px; left: 350px;">
+    <div class="window-title">
+        📝 Blog Posts 📝
+        <div class="buttons">
+            <div class="button" style="background: #ffff4d;" onclick="minimizeWindow('blog')"></div>
+            <div class="button" style="background: #ff6b6b;" onclick="closeWindow('blog')"></div>
+        </div>
+    </div>
+    <div class="content">
+        <article style="margin-bottom: 20px;">
+            <h3 style="color: var(--primary); margin: 10px 0;">My Latest Project ✨</h3>
+            <p>{{ partial "menu_item.html" (dict "context" . "collection" $.Site.Data.menu.entries) }}</p>
+        </article>
+        <article>
+            <h3 style="color: var(--primary); margin: 10px 0;">Art Process 🎨</h3>
+            <p>Here's a peek into how I create my digital illustrations!</p>
+        </article>
+    </div>
+</div>
+
+<div class="menu">
+    <a href="#" class="menu-item" onclick="toggleWindow('profile')">
+        <img src="https://files.catbox.moe/9gnuwx.gif" alt="Profile">
+        Profile
+    </a>
+    <a href="#" class="menu-item" onclick="toggleWindow('gallery')">
+        <img src="https://files.catbox.moe/0e0gxm.gif" alt="Gallery">
+        Gallery
+    </a>
+    <a href="#" class="menu-item" onclick="toggleWindow('blog')">
+        <img src="https://files.catbox.moe/3bobcc.gif" alt="Blog">
+        Blog
+    </a>
+</div>
+
+<!--<div class="music-player">-->
+<!--&lt;!&ndash;    <img src="https://files.catbox.moe/fabe5z.jpg" alt="Album Art">&ndash;&gt;-->
+<!--    <div class="music-controls">-->
+<!--        <div class="music-control">⏮</div>-->
+<!--        <div class="music-control">▶</div>-->
+<!--        <div class="music-control">⏭</div>-->
+<!--    </div>-->
+<!--</div>-->
+
+
+<script>
+        // Make windows draggable
+        const windows = document.querySelectorAll('.window');
+        windows.forEach(makeWindowDraggable);
+
+        function makeWindowDraggable(element) {
+            let pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+            element.querySelector('.window-title').onmousedown = dragMouseDown;
+
+            function dragMouseDown(e) {
+                e.preventDefault();
+                pos3 = e.clientX;
+                pos4 = e.clientY;
+                document.onmouseup = closeDragElement;
+                document.onmousemove = elementDrag;
+                bringToFront(element);
+            }
+
+            function elementDrag(e) {
+                e.preventDefault();
+                pos1 = pos3 - e.clientX;
+                pos2 = pos4 - e.clientY;
+                pos3 = e.clientX;
+                pos4 = e.clientY;
+                element.style.top = (element.offsetTop - pos2) + "px";
+                element.style.left = (element.offsetLeft - pos1) + "px";
+            }
+
+            function closeDragElement() {
+                document.onmouseup = null;
+                document.onmousemove = null;
+            }
+        }
+
+        function bringToFront(element) {
+            windows.forEach(win => win.style.zIndex = "1"); element.style.zIndex = "2";
+        }
+
+        // Window management functions
+        function toggleWindow(id) {
+            const window = document.getElementById(id);
+            if (window.classList.contains('active')) {
+                window.classList.remove('active');
+            } else {
+                window.classList.add('active');
+                bringToFront(window);
+            }
+        }
+
+        function closeWindow(id) {
+            document.getElementById(id).classList.remove('active');
+        }
+
+        function minimizeWindow(id) {
+            const window = document.getElementById(id);
+            window.style.transform = 'scale(0.1)';
+            setTimeout(() => {
+                window.classList.remove('active');
+                window.style.transform = 'scale(1)';
+            }, 300);
+        }
+
+        // Sparkle effect
+        function createSparkle(e) {
+            const sparkle = document.createElement('div');
+            sparkle.style.position = 'fixed';
+            sparkle.style.pointerEvents = 'none';
+            sparkle.style.left = e.clientX + 'px';
+            sparkle.style.top = e.clientY + 'px';
+            sparkle.style.animation = 'sparkle 1s linear forwards';
+            sparkle.textContent = '✨';
+            document.body.appendChild(sparkle);
+            setTimeout(() => sparkle.remove(), 1000);
+        }
+
+        document.addEventListener('mousemove', (e) => {
+            if (Math.random() < 0.1) createSparkle(e);
+        });
+
+        // Notification system
+        function showNotification(message) {
+            const notification = document.createElement('div');
+            notification.className = 'notification';
+            notification.innerHTML = `
+                <img src="https://files.catbox.moe/px4tkj.gif" alt="Notification Icon">
+                <div>
+                    <strong>✨ Notice</strong>
+                    <p>${message}</p>
+                </div>
+            `;
+            document.body.appendChild(notification);
+            setTimeout(() => {
+                notification.style.animation = 'slideIn 0.5s ease-out reverse';
+                setTimeout(() => notification.remove(), 500);
+            }, 3000);
+        }
+
+        // Show welcome notification on load
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                showNotification('Welcome to my kawaii space! ૮ ˶ᵔ ᵕ ᵔ˶ ა');
+            }, 1000);
+        });
+
+        // Music player functionality
+        const musicControls = document.querySelectorAll('.music-control');
+        let isPlaying = false;
+
+        musicControls.forEach(control => {
+            control.addEventListener('click', () => {
+                if (control.textContent === '▶') {
+                    control.textContent = isPlaying ? '▶' : '⏸';
+                    isPlaying = !isPlaying;
+                }
+                control.style.transform = 'scale(0.9)';
+                setTimeout(() => control.style.transform = 'scale(1)', 100);
+            });
+        });
+
+        // Random floating elements
+        function createFloatingElement() {
+            const elements = ['🌸', '✨', '💖', '🌟', '🎀'];
+            const element = document.createElement('div');
+            element.style.position = 'fixed';
+            element.style.left = Math.random() * window.innerWidth + 'px';
+            element.style.top = window.innerHeight + 'px';
+            element.style.fontSize = (Math.random() * 20 + 10) + 'px';
+            element.style.pointerEvents = 'none';
+            element.style.animation = 'float 3s ease-in-out infinite';
+            element.textContent = elements[Math.floor(Math.random() * elements.length)];
+            document.body.appendChild(element);
+            setTimeout(() => element.remove(), 3000);
+        }
+
+        setInterval(createFloatingElement, 2000);
+
+        // Easter egg - click counter
+        let clickCount = 0;
+        document.addEventListener('click', () => {
+            clickCount++;
+            if (clickCount === 10) {
+                showNotification('You found a secret! 🎉');
+                document.body.style.animation = 'rainbow 3s infinite';
+            }
+        });
+
+        // Add rainbow animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes rainbow {
+                0% { background-color: var(--secondary); }
+                33% { background-color: #ffd6ff; }
+                66% { background-color: #d6ffff; }
+                100% { background-color: var(--secondary); }
+            }
+
+            @keyframes sparkle {
+                0% { transform: scale(0) rotate(0deg); opacity: 0; }
+                50% { transform: scale(1) rotate(180deg); opacity: 1; }
+                100% { transform: scale(0) rotate(360deg); opacity: 0; }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
 </body>
