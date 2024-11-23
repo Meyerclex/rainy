@@ -1,0 +1,8 @@
+<div class="menu">
+    {{ range .Site.Params.desktopicon }}
+        <a href="#" class="menu-item" onclick="toggleWindow('{{ .window_id }}')">
+            <img src="{{ .avatar }}" alt="{{ .title }}">
+            {{ .title }}
+        </a>
+    {{ end }}
+</div>

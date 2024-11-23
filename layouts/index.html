@@ -1,17 +1,9 @@
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/satouriko/LxgwWenKai_Webfonts@v1.101/dist/LXGWWenKai-Regular.css" />
-<head>
-  <link rel="shortcut icon" type="image/x-icon" href="{{ $.Site.Params.favicon | relURL }}" />
-  {{ $options := (dict "outputStyle" "compressed" "enableSourceMap" (not hugo.IsProduction)) }}
-  {{ $sass := resources.Get "css/nav.scss" }}
-  {{ $style := $sass | css.Sass $options | resources.Fingerprint "sha512" }}
-  <link rel="stylesheet" href="{{ $style.Permalink | relURL }}" integrity="{{ $style.Data.Integrity }}" />
-  {{ if .Params.mathjax }} {{ partial "mathjax.html" . }} {{ end }}
-</head>
+{{- partial "desktop-head.html" . -}}
 
 <body>
-<div id="profile" class="window active" style="top: 50px; left: 150px;">
+<div id="profile" class="window active index-window" style="">
     <div class="window-title">
-        ✨ My Profile ✨
+        ✨ {{ $.Site.Title }} ✨
         <div class="buttons">
             <div class="button" style="background: #ffff4d;" onclick="minimizeWindow('profile')"></div>
             <div class="button" style="background: #ff6b6b;" onclick="closeWindow('profile')"></div>
@@ -19,31 +11,31 @@
     </div>
     <div class="content">
         <div class="profile-card">
-            <img src="https://files.catbox.moe/yscv85.gif" alt="Profile Picture" class="profile-image">
-            <div class="profile-info">
-                <h3>[Your Name]</h3>
-                <p>✨ Digital Artist</p>
-                <p>🌸 Web Developer</p>
+            <img src="{{ .Site.Params.avatarurl }}" alt="Profile Picture" class="profile-image">
+            <div class="profile-info warning">
+                <h3>[ Warning! ]</h3>
+                <p>{{ .Site.Params.warning | safeHTML }}</p>
             </div>
         </div>
-        <div class="social-links">
-            <a href="#" class="social-link">
-                <img src="https://files.catbox.moe/og4nft.gif" alt="Twitter">
-                Twitter
-            </a>
-            <a href="#" class="social-link">
-                <img src="https://files.catbox.moe/7tzc9c.gif" alt="Instagram">
-                Instagram
-            </a>
-            <a href="#" class="social-link">
-                <img src="https://files.catbox.moe/dtal07.gif" alt="GitHub">
-                GitHub
-            </a>
-            <a href="#" class="social-link">
-                <img src="https://files.catbox.moe/e0ep7c.gif" alt="DeviantArt">
-                DeviantArt
-            </a>
-        </div>
+        <a href='/home' class="enter">Enter</a>
+{{/*        <div class="social-links">*/}}
+{{/*            <a href="#" class="social-link">*/}}
+{{/*                <img src="https://files.catbox.moe/og4nft.gif" alt="Twitter">*/}}
+{{/*                Twitter*/}}
+{{/*            </a>*/}}
+{{/*            <a href="#" class="social-link">*/}}
+{{/*                <img src="https://files.catbox.moe/7tzc9c.gif" alt="Instagram">*/}}
+{{/*                Instagram*/}}
+{{/*            </a>*/}}
+{{/*            <a href="#" class="social-link">*/}}
+{{/*                <img src="https://files.catbox.moe/dtal07.gif" alt="GitHub">*/}}
+{{/*                GitHub*/}}
+{{/*            </a>*/}}
+{{/*            <a href="#" class="social-link">*/}}
+{{/*                <img src="https://files.catbox.moe/e0ep7c.gif" alt="DeviantArt">*/}}
+{{/*                DeviantArt*/}}
+{{/*            </a>*/}}
+{{/*        </div>*/}}
     </div>
 </div>
 </body>

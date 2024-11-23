@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en-us"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+   <meta name="description" content="To do List
+
+ 继续施工完善页面
+ 好好学习一下如何适配移动端
+ 修改夜晚主题配色
+ 写一下装修笔记
+
+2024/11/23
+博客大装修了一番。
+
+Resource Credit
+
+
+图标来源Pixel Safari
+
+
+页面设计来源aeon flexx
+
+
+
+装修笔记索引
+
+1. 鱼鱼小家的装修笔记
+2. Stack 主题及 Waline 评论区装修笔记
+3. Luna 主题装修笔记
+
+2022-12-17
+主题更换为Gruvbox，因为懒所以没有配置右下角的提问箱也没有写装修笔记（喂），主要改动有：
+
+将目录修改为默认显示
+配置了 Waline 评论区并修改了配色
+为文章配置了中文字数显示，增加页脚统计
+成功把评论区的表情给改大了。不知为何在 CSS 文件里写样式，本地预览生效但推上去却不显示，所以最终是在layouts\partials\comments.html里加了&lt;style&gt;标签写样式来解决的这个问题
+
+因为不太理解 Git 分支到底怎么更新，我现在驯服这个主题的方式把主题仓库拉下来，更新文章后敲hugo生成新的public文件夹，建一个 Public 仓库，把public文件夹的内容复制过来，更新仓库，把这个仓库作为站点仓库，而非像过去那样把主题仓库作为站点仓库。
+2022-09-14
+文章页面打开时实在过分卡顿，排查原因，查到一篇文章谈到是背景图片显示方式background-attachment: fixed;导致的，一口气注释掉。
+原文提供的优化方法试了几次都会导致字重显示有误（怀疑是::before的原因），最终也没有找到能够让图片不滚动的方法，图片滚动好像又会导致渲染不及时所以下滑时有短暂的大闪白光效果（）？，所以加了一行will-change: auto;应付一下就算完事了，谁知道起不起效果，不管你了！
+不知道为什么表情变得奇大无比，于是修改了评论区表情的大小和显示方式，现在悬停在它们身上可以获得放大效果，超可爱。感谢咖啡冰河的文章：
+    img.wl-emoji,
+    img.vemoji {
+        width: 38px;
+        vertical-align: sub;
+        transition: ease-out .6s;
+    }
+
+    img.wl-emoji:hover,
+    img.vemoji:hover {
+        transform: scale(1.75);
+    }
+2022-09-10
+由于 Luna 实在难以驾驭，所以换回了又快又好用的 Stack 主题噗哈哈哈 XD！对主题一番装修，人家的 CSS 知识还没法照顾到移动端的适配，希望不要出太大差错。">  
+
+  <title>
+    
+      
+    
+</title>
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/" />
+  
+  
+  
+  <link rel="stylesheet" href="/css/main.c9c78ffb4c43c0ffd58c2d39b81be990aff68c9359926e87e41cd356318936ccecd937b49cf454ccbe06caf2ce10a88fae780406dd4527df2d75a9b297a50258.css" integrity="sha512-yceP&#43;0xDwP/VjC05uBvpkK/2jJNZkm6H5BzTVjGJNszs2Te0nPRUzL4GyvLOEKiPrngEBt1FJ98tdamyl6UCWA==" />
+  
+</head>
+<body a="light">
+        <main class="page-content" aria-label="Content">
+            <div class="w">
+<a href="/">..</a>
+
+
+<article>
+    <p class="post-meta">
+        <time datetime="0001-01-01 00:00:00 &#43;0000 UTC">
+            0001-01-01
+        </time>
+    </p>
+
+    <h1></h1>
+
+    
+
+    <h2 id="to-do-list">To do List</h2>
+<ul>
+<li><input disabled="" type="checkbox"> 继续施工完善页面</li>
+<li><input disabled="" type="checkbox"> 好好学习一下如何适配移动端</li>
+<li><input disabled="" type="checkbox"> 修改夜晚主题配色</li>
+<li><input disabled="" type="checkbox"> 写一下装修笔记</li>
+</ul>
+<h2 id="20241123">2024/11/23</h2>
+<p>博客大装修了一番。</p>
+<blockquote>
+<p><strong>Resource Credit</strong></p>
+<ul>
+<li>
+<p>图标来源<a href="https://pixelsafari.neocities.org/favicon/">Pixel Safari</a></p>
+</li>
+<li>
+<p>页面设计来源<a href="https://codepen.io/aeon-flexx-dead-girl/pen/RwXmbdQ">aeon flexx</a></p>
+</li>
+</ul>
+</blockquote>
+<h2 id="装修笔记索引">装修笔记索引</h2>
+<blockquote>
+<p><a href="/posts/archiveandlink/">1. 鱼鱼小家的装修笔记</a></p>
+<p><a href="/posts/decoration/">2. Stack 主题及 Waline 评论区装修笔记</a></p>
+<p><a href="/posts/hugo-luna/">3. Luna 主题装修笔记</a></p>
+</blockquote>
+<h2 id="2022-12-17">2022-12-17</h2>
+<p>主题更换为<a href="https://github.com/schnerring/hugo-theme-gruvbox">Gruvbox</a>，因为懒所以没有配置右下角的提问箱也没有写装修笔记（喂），主要改动有：</p>
+<ol>
+<li>将目录修改为默认显示</li>
+<li>配置了 Waline 评论区并修改了配色</li>
+<li>为文章配置了中文字数显示，增加页脚统计</li>
+<li>成功把评论区的表情给改大了。不知为何在 CSS 文件里写样式，本地预览生效但推上去却不显示，所以最终是在<code>layouts\partials\comments.html</code>里加了<code>&lt;style&gt;</code>标签写样式来解决的这个问题</li>
+</ol>
+<p>因为不太理解 Git 分支到底怎么更新，我现在驯服这个主题的方式把主题仓库拉下来，更新文章后敲<code>hugo</code>生成新的<code>public</code>文件夹，建一个 Public 仓库，把<code>public</code>文件夹的内容复制过来，更新仓库，把这个仓库作为站点仓库，而非像过去那样把主题仓库作为站点仓库。</p>
+<h2 id="2022-09-14">2022-09-14</h2>
+<p>文章页面打开时实在过分卡顿，排查原因，查到<a href="https://segmentfault.com/a/1190000002970056">一篇文章</a>谈到是背景图片显示方式<code>background-attachment: fixed;</code>导致的，一口气注释掉。</p>
+<p>原文提供的优化方法试了几次都会导致字重显示有误（怀疑是<code>::before</code>的原因），最终也没有找到能够让图片不滚动的方法，图片滚动好像又会导致渲染不及时所以下滑时有短暂的大闪白光效果（）？，所以加了一行<code>will-change: auto;</code>应付一下就算完事了，谁知道起不起效果，不管你了！</p>
+<p>不知道为什么表情变得奇大无比，于是修改了评论区表情的大小和显示方式，现在悬停在它们身上可以获得放大效果，超可爱。感谢<a href="https://blog.mysto.cyou/posts/211028-blognewtheme/">咖啡冰河的文章</a>：</p>
+<pre tabindex="0"><code>    img.wl-emoji,
+    img.vemoji {
+        width: 38px;
+        vertical-align: sub;
+        transition: ease-out .6s;
+    }
+
+    img.wl-emoji:hover,
+    img.vemoji:hover {
+        transform: scale(1.75);
+    }
+</code></pre><h2 id="2022-09-10">2022-09-10</h2>
+<p>由于 Luna 实在难以驾驭，所以换回了又快又好用的 Stack 主题噗哈哈哈 XD！对主题一番装修，人家的 CSS 知识还没法照顾到移动端的适配，希望不要出太大差错。</p>
+<h3 id="关于版权">关于版权</h3>
+<ol>
+<li>感谢又快又好用的<a href="https://github.com/CaiJimmy/hugo-theme-stack">Stack</a>主题</li>
+<li>感谢 Home 页的九十年代小猫咪：<a href="https://webneko.net/?white">It&rsquo;s Neko!</a></li>
+<li>如果你也想要一个站点标题图片：<a href="https://textanim.com/">textanim</a></li>
+<li>背景与页脚图片（一个美丽的站点）：<a href="https://cinni.net/web.html#blinkies">cinni.net</a></li>
+</ol>
+<h2 id="2022-08-30">2022-08-30</h2>
+<p>取消了 Channel.io 聊天气泡.</p>
+<h2 id="2022-07-24">2022-07-24</h2>
+<p>根据芋阿圆的笔记增加了文章段首空两格的 Feature.</p>
+<h2 id="2022-05-24">2022-05-24</h2>
+<p>终于把消失很久的聊天小气泡加上，虽然没有人找我聊天啦 💬</p>
+<h2 id="2022-05-22">2022-05-22</h2>
+<p>终于把页脚的心头大患 Run Time 给改了实现了所有想要的 Feature 了，小鸟立誓再也不会打开装修页面了 😤VS code 也卸载了（假的），再见！</p>
+<h2 id="2022-05-19">2022-05-19</h2>
+<p>经过爆破艰难地更新了船新版本的 Luna，获取了浮动 Toc 并立誓再也不更新主题了</p>
+<h2 id="2022-05-05">2022-05-05</h2>
+<p>站点主题从 Stack 更换为 Luna</p>
+<h2 id="2021-11-14">2021-11-14</h2>
+<p>小鸟拥有了自己的第一个私人博客</p>
+
+</article>
+
+                
+
+
+            </div>
+        </main>
+    </body>
+</html>

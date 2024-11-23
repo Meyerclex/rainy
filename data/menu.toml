@@ -1,6 +1,5 @@
 [[entries]]
 title = "All Posts"
-
   [entries.post_list]
   limit = 5
   show_more = true
@@ -8,5 +7,5 @@ title = "All Posts"
   show_more_url = "posts"
 
 [[entries]]
-title = "rss"
+title = "Rss"
 url = "index.xml"

@@ -1,8 +1,65 @@
-baseURL = 'http://example.org/'
+baseURL = 'https://gregueria.icu/'
 languageCode = 'en-us'
-title = 'So long, Thanks For All the Fish'
+title = '再會，謝謝所有的魚'
 theme = 'nostyleplease'
+
+[markup]
+[markup.goldmark]
+[markup.goldmark.renderer]
+unsafe = true
+
 
 [params.theme_config]
 appearance = "light"  # 或 "light"，"dark"
+
+[params]
+warning = """
+  本站可能包含以下内容：
+  <ul>
+    <li>💜 LGBTQIA+</li>
+    <li>🖤 Dark Thoughts</li>
+    <li>✨ NSFW Content</li>
+  </ul>
+  """
+avatarurl = "/cat/tuxicon2.gif"
+
+
+[[params.desktopicon]]
+title = "Profile"
+avatar = "/cat/cat69.gif"
+profile_picture = "/cat/tuxicon2.gif"
+profile_name = "鱼鱼 | She/her | Ace & Aro"
+profile_descrpition = "🤍 您的奶牛猫图片转发使者<br>💜 狂爱猫狗塑同人女一枚<br>🖤 曾成功安利125位路过网友观看电影《无间道2》"
+window_id = "profile"  # 对应的窗口 ID
+social = [
+    { name = "Archive of Our Own", url = "https://archiveofourown.org/users/timuk", avatar = "/icons/paper5.gif" },
+    { name = "Fanfic Blog", url = "https://written.gregueria.icu/", avatar = "/icons/light4.gif" },
+]
+site_info_title = "About My Site ⛳"
+site_info_description = '网友，你好！在大装修以后，我也不知道我的站点会在哪里出现问题。建议在网页端进行浏览。<br>至于什么时候能够适配移动端，要根据我网页知识学习进度而定。'
+
+[[params.desktopicon]]
+title = "Blog"
+avatar = "/icons/bath4.gif"
+window_id = "blog"
+
+[[params.desktopicon]]
+title = "Friends"
+avatar = "/icons/cat75.gif"
+window_id = "friends"
+
+[[params.desktopicon]]
+title = "Guest Book"
+avatar = "/icons/light7.gif"
+window_id = "guest_book"
+
+[[params.desktopicon]]
+title = "Library"
+avatar = "/icons/cat32.gif"
+window_id = "library"
+
+[[params.desktopicon]]
+title = "Changelog"
+avatar = "/icons/bounce.gif"
+window_id = "changelog"
 

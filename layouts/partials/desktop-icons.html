@@ -1,0 +1,113 @@
+<div class="desktop-icons">
+    {{ range .Site.Params.desktopicon }}
+        <div class="desktop-icon" onclick="toggleWindow('{{ .window_id }}')">
+            <img src="{{ .avatar }}" alt="{{ .title }} Icon">
+            <span>{{ .title }}</span>
+        </div>
+    {{ end }}
+</div>
+
+{{ range .Site.Params.desktopicon }}
+
+    <div id="profile" class="window" style="top: 50px; left: 150px;">
+        <div class="window-title" style="margin-bottom: 15px;">
+            ✨ About me ✨
+            <div class="buttons">
+                <div class="button" style="background: #ffff4d;" onclick="minimizeWindow('profile')"></div>
+                <div class="button" style="background: #ff6b6b;" onclick="closeWindow('profile')"></div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="profile-card">
+                <img src="{{ .profile_picture }}" alt="Profile Picture" class="profile-image">
+                <div class="profile-info">
+                    <h3>{{ .profile_name }}</h3>
+                    <p>{{ .profile_descrpition | safeHTML }}</p>
+                </div>
+            </div>
+            <div class="social-links">
+                {{ range .social }}
+                    <a href="{{ .url }}" class="social-link" target="_blank">
+                        <img src="{{ .avatar }}" alt="{{ .name }}">
+                        {{ .name }}
+                    </a>
+                {{ end }}
+            </div>
+        </div>
+    </div>
+
+    <div id="blog" class="window" style="top: 150px; left: 200px;">
+        <div class="window-title">
+            📝 Blog Posts 📝
+            <div class="buttons">
+                <div class="button" style="background: #ffff4d;" onclick="minimizeWindow('blog')"></div>
+                <div class="button" style="background: #ff6b6b;" onclick="closeWindow('blog')"></div>
+            </div>
+        </div>
+        <div class="content">
+            <article style="margin-bottom: 20px;">
+                <h3 style="color: var(--primary); margin: 10px 0;">My Latest Project ✨</h3>
+                <div class="posts-list">{{ partial "menu_item.html" (dict "context" . "collection" $.Site.Data.menu.entries) }}</div>
+            </article>
+            <article>
+                <h3 style="color: var(--primary); margin: 10px 0;">{{ .site_info_title }}</h3>
+                <p>{{ .site_info_description | safeHTML }}</p>
+            </article>
+        </div>
+    </div>
+
+    <div id="friends" class="window" style="top: 100px; left: 550px;">
+        <div class="window-title">
+            🎉 Friends 🎉
+            <div class="buttons">
+                <div class="button" style="background: #ffff4d;" onclick="minimizeWindow('friends')"></div>
+                <div class="button" style="background: #ff6b6b;" onclick="closeWindow('friends')"></div>
+            </div>
+        </div>
+        <div class="content">
+            {{ $friends_content := readFile "content/Links - 副本.md" | safeHTML }}
+            {{ $friends_content | markdownify }}
+        </div>
+    </div>
+
+    <div id="guest_book" class="window" style="top: 70px; left: 750px;">
+        <div class="window-title">
+            🎨 Guest Book 🎨
+            <div class="buttons">
+                <div class="button" style="background: #ffff4d;" onclick="minimizeWindow('guest_book')"></div>
+                <div class="button" style="background: #ff6b6b;" onclick="closeWindow('guest_book')"></div>
+            </div>
+        </div>
+        <div class="content">
+            <iframe src="https://www3.cbox.ws/box/?boxid=3522873&boxtag=LBkamX" width="100%" height="350" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>
+        </div>
+    </div>
+
+    <div id="library" class="window" style="top: 400px; left: 250px;">
+        <div class="window-title">
+            🧸 Library 🧸
+            <div class="buttons">
+                <div class="button" style="background: #ffff4d;" onclick="minimizeWindow('library')"></div>
+                <div class="button" style="background: #ff6b6b;" onclick="closeWindow('library')"></div>
+            </div>
+        </div>
+        <div class="content">
+            施工ing...
+        </div>
+    </div>
+
+    <div id="changelog" class="window" style="top: 230px; left: 900px;">
+        <div class="window-title">
+            🧸 Changelog 🧸
+            <div class="buttons">
+                <div class="button" style="background: #ffff4d;" onclick="minimizeWindow('changelog')"></div>
+                <div class="button" style="background: #ff6b6b;" onclick="closeWindow('changelog')"></div>
+            </div>
+        </div>
+        <div class="content" style="max-height: 250px; overflow-y: scroll;">
+                {{ $friends_content := readFile "content/changelog.md" | safeHTML }}
+                {{ $friends_content | markdownify }}
+        </div>
+    </div>
+
+{{ end }}

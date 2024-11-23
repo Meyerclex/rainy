@@ -2,9 +2,9 @@
     {{- range $item := .collection -}}
         <li>
             {{- with $item.url -}}
-                <a href="{{ $item.url | relURL }}">{{ safeHTML $item.title }}</a>
+                <a class="menu-item-list" href="{{ $item.url | relURL }}">{{ safeHTML $item.title }}</a>
             {{- else -}}
-                {{ safeHTML $item.title }}
+                    <span class="entries-title">{{ safeHTML $item.title }}</span>
             {{- end -}}
         </li>
 

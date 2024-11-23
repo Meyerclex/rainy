@@ -1,16 +1,47 @@
 @import url("https://static.zeoseven.com/zsft/279/main/result.css");
+
 :root {
-  --primary: #ff69b4;
+  --primary: #D14D72;
   --secondary: #fbe6e2;
   --accent: #ffbaf1;
   --text: #665566;
   --window-bg: rgba(255, 255, 255, 0.95);
+  --linkhover: #FC0;
+  --trans-secondary: rgba(251, 230, 226, 0.46);
 }
+
+// dark mode
+body.dark-mode {
+  --primary: #C84B31;
+  --secondary: #343131;
+  --accent: #3C3D37;
+  --text: #ECDFCC;
+  --window-bg: rgba(18, 18, 18, 0.95);
+  --linkhover: #FFD700;
+  --trans-secondary: rgba(52, 49, 49, 0.62);
+}
+
+#toggle-theme {
+  position: fixed; /* 固定位置 */
+  top: 10px;       /* 距离顶部 10px */
+  right: 10px;     /* 距离右侧 10px */
+  //background: var(--primary); /* 使用你的全局主色 */
+  cursor: pointer; /* 鼠标悬停变成指针 */
+  //z-index: 1000;    /* 确保按钮在其他元素上方 */
+}
+
+#toggle-theme:hover {
+  //background: var(--accent); /* 悬停时的背景颜色 */
+}
+
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scrollbar-color: var(--primary) var(--secondary);
+  scrollbar-width: auto;
+  line-height: 1.6;
 }
 
 body {
@@ -25,20 +56,24 @@ body {
   background-size: 100px 100px;
 }
 
-
+::selection {
+  background-color: var(--secondary); /* 设置选中文字的背景色 */
+  color: var(--text); /* 设置选中文字的文本颜色，选择合适的颜色以确保可读性 */
+}
 
 .desktop-icons {
   position: fixed;
   top: 20px;
   left: 20px;
   display: flex;
-  flex-direction: column;
-  gap: 20px;
+  flex-wrap: wrap; /* 允许换行 */
+  gap: 20px; /* 间距 */
   z-index: 1;
+  max-width: 180px; /* 限制每列的最大宽度 */
 }
 
 .desktop-icon {
-  width: 80px;
+  width: 80px; /* 设置每个图标的宽度 */
   height: 90px;
   display: flex;
   flex-direction: column;
@@ -46,10 +81,19 @@ body {
   text-align: center;
   cursor: pointer;
   transition: transform 0.2s;
+  margin-bottom: 20px; /* 下方间距 */
 }
+
+
+
 
 .desktop-icon:hover {
   transform: scale(1.1);
+}
+
+#toggle-theme.desktop-icon img {
+  width: 40px;
+  height: 40px;
 }
 
 .desktop-icon img {
@@ -58,14 +102,14 @@ body {
   margin-bottom: 5px;
   border-radius: 10px;
   border: 2px solid var(--primary);
-  background: white;
+  background: var(--window-bg);
   padding: 5px;
 }
 
 .desktop-icon span {
   color: var(--text);
   font-size: 12px;
-  text-shadow: 1px 1px 0 white;
+  text-shadow: 1px 1px 0 var(--window-bg);
 }
 
 .window {
@@ -76,9 +120,12 @@ body {
   position: absolute;
   padding: 10px;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
-  cursor: move;
   backdrop-filter: blur(5px);
   display: none;
+}
+
+.window-title {
+  cursor: move;
 }
 
 #blog.window {
@@ -89,16 +136,24 @@ body {
   display: block;
 }
 
+#friends.window {
+  width: 600px;
+}
+
 .window-title {
   background: var(--primary);
   color: white;
   padding: 8px 15px;
   border-radius: 8px;
-  margin-bottom: 15px;
+  //margin-bottom: 15px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-size: 14px;
+}
+
+#profile.window-title {
+  margin-bottom: 15px !important;
 }
 
 .buttons {
@@ -133,26 +188,87 @@ body {
   margin: 10px 0;
 }
 
+.content a,
+.page_article a,
+.page_posts a,
+.posts-list a {
+  padding: 8px;
+  text-decoration: none;
+  color: var(--text);
+}
+
+.page_article a, {
+  padding: 0;
+}
+
+.posts-list ul {
+  list-style-type: circle;
+  margin-left: 20px;  /* 控制圆点与文本的间距 */
+  padding-left: 0;    /* 清除内边距，避免内容溢出 */
+  //color: var(--);
+}
+
+.posts-list li {
+  margin-bottom: 5px; /* 可选：调整每项的间距 */
+}
+
+.toc ul,
+.page_posts ul,
+.posts-list ul ul {
+  list-style-type: none;
+  //padding-left: 20px; /* 缩进内边距，避免溢出 */
+  margin-left: 0;     /* 防止子列表与父级列表的圆点重叠 */
+}
+
+.toc ul li {
+  margin-left: 10px;
+}
+
+.posts-list a {
+  transform: scale(1.05);
+}
+
+.posts-list a a {
+  font-size: 12px;
+}
+
+.show-more a,
+.entries-title {
+  //color: var(--primary)!important;
+  //font-weight: bold;
+}
+
 .profile-card {
   display: flex;
   align-items: center;
   gap: 15px;
-  background: white;
-  padding: 15px;
+  background: var(--window-bg);
+  //padding: 15px;
   border-radius: 10px;
   margin-bottom: 15px;
 }
 
+.warning ul {
+  list-style: none; /* 取消默认圆点 */
+  padding-left: 0;  /* 移除默认缩进 */
+}
+
+
 .profile-image {
-  width: 80px;
-  height: 80px;
+  width: 49px;
+  height: 55px;
   border-radius: 50%;
-  border: 3px solid var(--primary);
+  //border: 3px solid var(--primary);
 }
 
 .profile-info h3 {
   color: var(--primary);
   margin-bottom: 5px;
+  font-size: 16px;
+}
+
+.profile-info p {
+  font-size: 14px;
 }
 
 .social-links {
@@ -167,7 +283,7 @@ body {
   align-items: center;
   gap: 8px;
   padding: 8px;
-  background: white;
+  background: var(--window-bg);
   border-radius: 8px;
   text-decoration: none;
   color: var(--text);
@@ -176,12 +292,39 @@ body {
 
 .social-link:hover {
   transform: scale(1.05);
+  text-shadow: var(--linkhover) 1px 0 10px;
 }
 
-.social-link img {
+.social-links a {
+  font-size: 12px;
+}
+
+.social-links img{
+  border-radius: 0px;
+}
+
+.enter img {
   width: 20px;
   height: 20px;
 }
+
+.enter {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px;
+  background: white;
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--primary);
+  transition: transform 0.2s;
+  justify-content: center; /* 水平居中 */
+}
+
+.enter:hover {
+  text-shadow:  var(--linkhover) 1px 0 10px;
+}
+
 
 .gallery {
   display: grid;
@@ -207,7 +350,7 @@ body {
   bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
-  background: white;
+  background: var(--window-bg);
   padding: 12px 25px;
   border-radius: 25px;
   border: 3px solid var(--primary);
@@ -225,11 +368,13 @@ body {
   display: flex;
   align-items: center;
   gap: 5px;
+  font-size: 16px;
 }
 
 .menu-item:hover {
-  color: #ff1493;
-  transform: scale(1.1);
+  //color: #ff1493;
+  //transform: scale(1.05);
+  text-shadow:  var(--linkhover) 1px 0 10px;
 }
 
 .menu-item img {
@@ -306,7 +451,210 @@ body {
   transform: scale(1.1);
 }
 
+#friends .content h2 {
+  color: var(--primary);
+  margin: 10px 0;
+}
+
+#friends .content ul {
+  list-style-type: none;
+  margin-left: 10px;  /* 控制圆点与文本的间距 */
+  padding-left: 0;    /* 清除内边距，避免内容溢出 */
+  //color: var(--);
+}
+
+.content a {
+  padding: 8px;
+  text-decoration: none;
+  color: var(--text);
+  text-shadow:  var(--linkhover) 1px 0 10px;
+}
+
+.posts-list a, .postslist a {
+  text-shadow:  none;
+}
+
+.page_article a,
+#friends .content a:hover {
+  text-shadow:  var(--linkhover) 1px 0 10px;
+}
+
+#friends .content p {
+  padding: 8px;
+  text-decoration: none;
+  color: var(--text);
+}
+
+.content hr {
+  width: 33%;
+  margin: 1.5em auto 1.5em auto;
+}
+
+
+.index-window {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+}
+
+
+@media screen and (max-width: 600px) {
+ .window {
+   top: 10px!important;
+   left: 90px!important;
+   width: 330px!important;
+ }
+
+  .index-window {
+    top: 200px !important;
+    left: 50% !important; /* 使它在水平居中 */
+    width: 90% !important; /* 调整宽度为页面宽度的90% */
+    transform: translateX(-50%) !important; /* 水平居中 */
+  }
+
+}
+
+.page_posts {
+  position: absolute;
+  top: calc(50% - 250px); /* 假设高度为500px */
+  left: calc(50% - 250px); /* 假设宽度为500px */
+}
+
+.page_article {
+  position: absolute;
+  top: calc(50% - 250px); /* 假设高度为500px */
+  left: calc(50% - 360px); /* 假设宽度为500px */
+}
+
+.page_posts {
+  width: 500px;
+}
+
+.page_article {
+  top: calc(50% - 300px); /* 假设高度为500px */
+  width: 700px;
+}
+
+.archive--year {
+  margin: 10px 0px 10px 0px;
+}
+
+#single_article .window-title {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+#single_article .content {
+  padding: 20px 25px;
+}
+
+#single_article .content p {
+  margin: 10px 0px;
+  font-size: 16px;
+}
 
 
 
+.content img.float-img35 {
+  float: left;
+  width: 35%;
+  margin-right: 1em !important; /* 强制覆盖 */
+  margin-bottom: 0em !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 添加阴影 */
+  border-radius: 8px; /* 可选：让图片的边角稍微圆润 */
+}
 
+.content img.float-img50 {
+  float: left;
+  width: 50%;
+  margin-right: 1em !important; /* 强制覆盖 */
+  margin-bottom: 0.5em !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 添加阴影 */
+  border-radius: 8px; /* 可选：让图片的边角稍微圆润 */
+}
+
+
+.content h1, .content h2, .content h3, hr, .content .wl-comment {
+  clear: both; /* 清除浮动 */
+}
+
+.content h2,
+.content h3,
+.content h4 {
+  margin: 10px 0px;
+  //text-shadow: var(--linkhover) 1px 0 10px;
+  color: var(--primary);
+}
+
+ .content ol {
+  padding-left: 20px; /* 根据需求调整 */
+}
+
+.window .content blockquote {
+  padding: 1em;
+  margin: 1em;
+  border-radius: 4px;
+  background: var(--trans-secondary);
+  border-left: 2px solid var(--primary);
+  font-size: 90%;
+}
+
+.toc {
+  display: block;
+  margin: 0 auto;
+  //width: fit-content;  /* 确保内容适应 */
+}
+
+.toc summary {
+  text-align: left; /* 确保 summary 文字左对齐 */
+}
+
+.toc #toc {
+  text-align: left; /* 确保目录内容左对齐 */
+}
+
+.content code {
+  margin-left: 5px;
+  margin-right: 5px;
+  border-radius: 4px;
+  background: var(--trans-secondary);
+  font-size: 90%;
+  line-height: 1.7em;
+}
+
+.content summary {
+
+}
+
+.content pre {
+  background: var(--trans-secondary);
+}
+
+.comments {
+  padding: 0 5px;
+  --waline-border: 0px;                             // 隐藏丑陋的边框
+  --waline-border-color: var(--waline-bgcolor);     // 隐藏丑陋的粗虚线
+  --waline-theme-color: var(--primary); // 更换绿绿的颜色
+  font-size: 80%!important;
+}
+
+.wl-nick span,
+#single_article .comments p {
+  font-size: 14px;
+  color: var(--text);
+}
+
+.wl-panel {
+  background: var(--window-bg)!important;
+  box-shadow: var(--secondary) 0px 0 10px!important;
+}
+
+blockquote ul {
+  padding-left: 20px;  /* 设置左边距 */
+  list-style-type: disc;  /* 设置列表项符号为圆点 */
+}
+
+ul {
+  list-style-type: none;
+}
