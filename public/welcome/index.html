@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>✨ Lullaby Lovescape Digital Diary ✨</title>
+    <style>
+        :root {
+            --primary: #ff69b4;
+            --secondary: #ffd6e9;
+            --accent: #ffbaf1;
+            --text: #665566;
+            --window-bg: rgba(255, 255, 255, 0.95);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--secondary);
+            font-family: 'Comic Sans MS', cursive;
+            overflow-x: hidden;
+            min-height: 100vh;
+            background-image: 
+                radial-gradient(#fff 20%, transparent 20%),
+                radial-gradient(#fff 20%, transparent 20%);
+            background-position: 0 0, 50px 50px;
+            background-size: 100px 100px;
+        }
+
+        .desktop-icons {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            z-index: 1;
+        }
+
+        .desktop-icon {
+            width: 80px;
+            height: 90px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .desktop-icon:hover {
+            transform: scale(1.1);
+        }
+
+        .desktop-icon img {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 5px;
+            border-radius: 10px;
+            border: 2px solid var(--primary);
+            background: white;
+            padding: 5px;
+        }
+
+        .desktop-icon span {
+            color: var(--text);
+            font-size: 12px;
+            text-shadow: 1px 1px 0 white;
+        }
+
+        .window {
+            background: var(--window-bg);
+            border: 3px solid var(--primary);
+            border-radius: 15px;
+            width: 350px;
+            position: absolute;
+            padding: 10px;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+            cursor: move;
+            backdrop-filter: blur(5px);
+            display: none;
+        }
+
+        .window.active {
+            display: block;
+        }
+
+        .window-title {
+            background: var(--primary);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 14px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 8px;
+        }
+
+        .button {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            border: 2px solid white;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .button:hover {
+            transform: scale(1.1);
+        }
+
+        .content {
+            padding: 15px;
+            font-size: 14px;
+            color: var(--text);
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .content img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin: 10px 0;
+        }
+
+        .profile-card {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .profile-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 3px solid var(--primary);
+        }
+
+        .profile-info h3 {
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+
+        .social-links {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px;
+            background: white;
+            border-radius: 8px;
+            text-decoration: none;
+            color: var(--text);
+            transition: transform 0.2s;
+        }
+
+        .social-link:hover {
+            transform: scale(1.05);
+        }
+
+        .social-link img {
+            width: 20px;
+            height: 20px;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .gallery img {
+            width: 100%;
+            aspect-ratio: 1;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform 0.2s;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        .menu {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: white;
+            padding: 12px 25px;
+            border-radius: 25px;
+            border: 3px solid var(--primary);
+            display: flex;
+            gap: 25px;
+            z-index: 1000;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .menu-item {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .menu-item:hover {
+            color: #ff1493;
+            transform: scale(1.1);
+        }
+
+        .menu-item img {
+            width: 20px;
+            height: 20px;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: white;
+            border: 2px solid var(--primary);
+            border-radius: 10px;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            animation: slideIn 0.5s ease-out;
+            z-index: 1000;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        @keyframes slideIn {
+            from { transform: translateX(100%); }
+            to { transform: translateX(0); }
+        }
+
+        .music-player {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            background: white;
+            border: 2px solid var(--primary);
+            border-radius: 15px;
+            padding: 10px;
+            width: 250px;
+            z-index: 999;
+        }
+
+        .music-player img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .music-controls {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .music-control {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .music-control:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="desktop-icons">
+        <div class="desktop-icon" onclick="toggleWindow('profile')">
+            <img src="https://files.catbox.moe/kmf4bc.gif" alt="Profile Icon">
+            <span>My Profile</span>
+        </div>
+        <div class="desktop-icon" onclick="toggleWindow('gallery')">
+            <img src="https://files.catbox.moe/3bobcc.gif" alt="Gallery Icon">
+            <span>Gallery</span>
+        </div>
+        <div class="desktop-icon" onclick="toggleWindow('blog')">
+            <img src="https://files.catbox.moe/ia8u2v.gif" alt="Blog Icon">
+            <span>Blog</span>
+        </div>
+    </div>
+
+    <div id="profile" class="window" style="top: 50px; left: 150px;">
+        <div class="window-title">
+            ✨ My Profile ✨
+            <div class="buttons">
+                <div class="button" style="background: #ffff4d;" onclick="minimizeWindow('profile')"></div>
+                <div class="button" style="background: #ff6b6b;" onclick="closeWindow('profile')"></div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="profile-card">
+                <img src="https://files.catbox.moe/yscv85.gif" alt="Profile Picture" class="profile-image">
+                <div class="profile-info">
+                    <h3>[Your Name]</h3>
+                    <p>✨ Digital Artist</p>
+                    <p>🌸 Web Developer</p>
+                </div>
+            </div>
+            <div class="social-links">
+                <a href="#" class="social-link">
+                    <img src="https://files.catbox.moe/og4nft.gif" alt="Twitter">
+                    Twitter
+                </a>
+                <a href="#" class="social-link">
+                    <img src="https://files.catbox.moe/7tzc9c.gif" alt="Instagram">
+                    Instagram
+                </a>
+                <a href="#" class="social-link">
+                    <img src="https://files.catbox.moe/dtal07.gif" alt="GitHub">
+                    GitHub
+                </a>
+                <a href="#" class="social-link">
+                    <img src="https://files.catbox.moe/e0ep7c.gif" alt="DeviantArt">
+                    DeviantArt
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div id="gallery" class="window" style="top: 100px; left: 550px;">
+        <div class="window-title">
+            🎨 My Gallery 🎨
+            <div class="buttons">
+                <div class="button" style="background: #ffff4d;" onclick="minimizeWindow('gallery')"></div>
+                <div class="button" style="background: #ff6b6b;" onclick="closeWindow('gallery')"></div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="gallery">
+                <img src="https://files.catbox.moe/cg2dzq.jpg" alt="Artwork 1">
+                <img src="https://files.catbox.moe/zwtdmj.jpg" alt="Artwork 2">
+                <img src="https://files.catbox.moe/unju81.jpg" alt="Artwork 3">
+                <img src="https://files.catbox.moe/qgkkhs.jpg" alt="Artwork 4">
+            </div>
+        </div>
+    </div>
+
+    <div id="blog" class="window" style="top: 150px; left: 350px;">
+        <div class="window-title">
+            📝 Blog Posts 📝
+            <div class="buttons">
+                <div class="button" style="background: #ffff4d;" onclick="minimizeWindow('blog')"></div>
+                <div class="button" style="background: #ff6b6b;" onclick="closeWindow('blog')"></div>
+            </div>
+        </div>
+        <div class="content">
+            <article style="margin-bottom: 20px;">
+                <img src="https://files.catbox.moe/31ivbg.jpg" alt="Blog Post 1">
+                <h3 style="color: var(--primary); margin: 10px 0;">My Latest Project ✨</h3>
+                <p>Working on something super kawaii! Stay tuned for more updates...</p>
+            </article>
+            <article>
+                <img src="https://files.catbox.moe/silz40.jpg" alt="Blog Post 2">
+                <h3 style="color: var(--primary); margin: 10px 0;">Art Process 🎨</h3>
+                <p>Here's a peek into how I create my digital illustrations!</p>
+            </article>
+        </div>
+    </div>
+
+    <div class="menu">
+        <a href="#" class="menu-item" onclick="toggleWindow('profile')">
+            <img src="https://files.catbox.moe/9gnuwx.gif" alt="Profile">
+            Profile
+        </a>
+        <a href="#" class="menu-item" onclick="toggleWindow('gallery')">
+            <img src="https://files.catbox.moe/0e0gxm.gif" alt="Gallery">
+            Gallery
+        </a>
+        <a href="#" class="menu-item" onclick="toggleWindow('blog')">
+            <img src="https://files.catbox.moe/3bobcc.gif" alt="Blog">
+            Blog
+        </a>
+    </div>
+
+    <div class="music-player">
+        <img src="https://files.catbox.moe/fabe5z.jpg" alt="Album Art">
+        <div class="music-controls">
+            <div class="music-control">⏮</div>
+            <div class="music-control">▶</div>
+            <div class="music-control">⏭</div>
+        </div>
+    </div>
+
+    <script>
+        
+        const windows = document.querySelectorAll('.window');
+        windows.forEach(makeWindowDraggable);
+
+        function makeWindowDraggable(element) {
+            let pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+            element.querySelector('.window-title').onmousedown = dragMouseDown;
+
+            function dragMouseDown(e) {
+                e.preventDefault();
+                pos3 = e.clientX;
+                pos4 = e.clientY;
+                document.onmouseup = closeDragElement;
+                document.onmousemove = elementDrag;
+                bringToFront(element);
+            }
+
+            function elementDrag(e) {
+                e.preventDefault();
+                pos1 = pos3 - e.clientX;
+                pos2 = pos4 - e.clientY;
+                pos3 = e.clientX;
+                pos4 = e.clientY;
+                element.style.top = (element.offsetTop - pos2) + "px";
+                element.style.left = (element.offsetLeft - pos1) + "px";
+            }
+
+            function closeDragElement() {
+                document.onmouseup = null;
+                document.onmousemove = null;
+            }
+        }
+
+        function bringToFront(element) {
+            windows.forEach(win => win.style.zIndex = "1"); element.style.zIndex = "2";
+        }
+
+        
+        function toggleWindow(id) {
+            const window = document.getElementById(id);
+            if (window.classList.contains('active')) {
+                window.classList.remove('active');
+            } else {
+                window.classList.add('active');
+                bringToFront(window);
+            }
+        }
+
+        function closeWindow(id) {
+            document.getElementById(id).classList.remove('active');
+        }
+
+        function minimizeWindow(id) {
+            const window = document.getElementById(id);
+            window.style.transform = 'scale(0.1)';
+            setTimeout(() => {
+                window.classList.remove('active');
+                window.style.transform = 'scale(1)';
+            }, 300);
+        }
+
+        
+        function createSparkle(e) {
+            const sparkle = document.createElement('div');
+            sparkle.style.position = 'fixed';
+            sparkle.style.pointerEvents = 'none';
+            sparkle.style.left = e.clientX + 'px';
+            sparkle.style.top = e.clientY + 'px';
+            sparkle.style.animation = 'sparkle 1s linear forwards';
+            sparkle.textContent = '✨';
+            document.body.appendChild(sparkle);
+            setTimeout(() => sparkle.remove(), 1000);
+        }
+
+        document.addEventListener('mousemove', (e) => {
+            if (Math.random() < 0.1) createSparkle(e);
+        });
+
+        
+        function showNotification(message) {
+            const notification = document.createElement('div');
+            notification.className = 'notification';
+            notification.innerHTML = `
+                <img src="https://files.catbox.moe/px4tkj.gif" alt="Notification Icon">
+                <div>
+                    <strong>✨ Notice</strong>
+                    <p>${message}</p>
+                </div>
+            `;
+            document.body.appendChild(notification);
+            setTimeout(() => {
+                notification.style.animation = 'slideIn 0.5s ease-out reverse';
+                setTimeout(() => notification.remove(), 500);
+            }, 3000);
+        }
+
+        
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                showNotification('Welcome to my kawaii space! ૮ ˶ᵔ ᵕ ᵔ˶ ა');
+            }, 1000);
+        });
+
+        
+        const musicControls = document.querySelectorAll('.music-control');
+        let isPlaying = false;
+
+        musicControls.forEach(control => {
+            control.addEventListener('click', () => {
+                if (control.textContent === '▶') {
+                    control.textContent = isPlaying ? '▶' : '⏸';
+                    isPlaying = !isPlaying;
+                }
+                control.style.transform = 'scale(0.9)';
+                setTimeout(() => control.style.transform = 'scale(1)', 100);
+            });
+        });
+
+        
+        function createFloatingElement() {
+            const elements = ['🌸', '✨', '💖', '🌟', '🎀'];
+            const element = document.createElement('div');
+            element.style.position = 'fixed';
+            element.style.left = Math.random() * window.innerWidth + 'px';
+            element.style.top = window.innerHeight + 'px';
+            element.style.fontSize = (Math.random() * 20 + 10) + 'px';
+            element.style.pointerEvents = 'none';
+            element.style.animation = 'float 3s ease-in-out infinite';
+            element.textContent = elements[Math.floor(Math.random() * elements.length)];
+            document.body.appendChild(element);
+            setTimeout(() => element.remove(), 3000);
+        }
+
+        setInterval(createFloatingElement, 2000);
+
+        
+        let clickCount = 0;
+        document.addEventListener('click', () => {
+            clickCount++;
+            if (clickCount === 10) {
+                showNotification('You found a secret! 🎉');
+                document.body.style.animation = 'rainbow 3s infinite';
+            }
+        });
+
+        
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes rainbow {
+                0% { background-color: var(--secondary); }
+                33% { background-color: #ffd6ff; }
+                66% { background-color: #d6ffff; }
+                100% { background-color: var(--secondary); }
+            }
+
+            @keyframes sparkle {
+                0% { transform: scale(0) rotate(0deg); opacity: 0; }
+                50% { transform: scale(1) rotate(180deg); opacity: 1; }
+                100% { transform: scale(0) rotate(360deg); opacity: 0; }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
