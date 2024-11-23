@@ -1,7 +1,14 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/satouriko/LxgwWenKai_Webfonts@v1.101/dist/LXGWWenKai-Regular.css" />
 <head>
+    <title>
+        {{ if .IsHome }}
+            {{ .Site.Title }}
+        {{ else }}
+            {{ .Title }} | {{ .Site.Title }}
+        {{ end }}
+    </title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <link rel="shortcut icon" type="image/x-icon" href="{{ $.Site.Params.favicon | relURL }}" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.png">
     {{ $options := (dict "outputStyle" "compressed" "enableSourceMap" (not hugo.IsProduction)) }}
     {{ $sass := resources.Get "css/nav.scss" }}
     {{ $style := $sass | css.Sass $options | resources.Fingerprint "sha512" }}

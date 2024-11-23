@@ -22,6 +22,8 @@ warning = """
   </ul>
   """
 avatarurl = "/cat/tuxicon2.gif"
+favicon = "images/favicon.png"
+
 
 
 [[params.desktopicon]]
