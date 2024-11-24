@@ -46,13 +46,19 @@
         </div>
         <div class="content">
             <article style="margin-bottom: 20px;">
-                <h3 style="color: var(--primary); margin: 10px 0;">My Latest Project ✨</h3>
+                <h3 style="color: var(--primary); margin: 10px 0;">Latest Posts 📚</h3>
                 <div class="posts-list">{{ partial "menu_item.html" (dict "context" . "collection" $.Site.Data.menu.entries) }}</div>
             </article>
             <article>
                 <h3 style="color: var(--primary); margin: 10px 0;">{{ .site_info_title }}</h3>
                 <p>{{ .site_info_description | safeHTML }}</p>
             </article>
+            <br>
+            <img src="/site/ghostszombies.gif" class="divider" style="display: block; margin-left: auto; margin-right: auto;" />
+            <section class="copyright">
+                &copy; 2021 -{{ if and (.Site.Params.footer.since) (ne .Site.Params.footer.since (int (now.Format "2006"))) }} {{ .Site.Params.footer.since }} - {{ end }} {{ now.Format "2006" }} <a href="/">谢谢所有的鱼</a>·<i class="fas fa-bell"></i>            <a id="days">0</a> Days<br>
+            </section>
+
         </div>
     </div>
 

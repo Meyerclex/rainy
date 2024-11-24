@@ -23,7 +23,7 @@
 
     <div class="window-article">
         <article class="content">
-            {{ if or .Params.toc (not .Params.toc) }} <!-- 确保toc为true或未定义时显示 -->
+            {{ if not (eq .Params.toc false) }}
                 <details class="toc" close style="display: block; margin: 0 auto; width: fit-content;">
                     <summary style="text-align: left;">
                         Table of Content
@@ -38,7 +38,7 @@
             {{ end }}
             {{ .Content }}
             <br>
-            <img src="/site/cornerribbon1.png" class="divider" style="display: block; margin-left: auto; margin-right: auto;" />
+            <img src="/site/ghostszombies.gif" class="divider" style="display: block; margin-left: auto; margin-right: auto;" />
             <div id="comments" class="comments">
             {{ partial "comment.html" . }}
             </div>

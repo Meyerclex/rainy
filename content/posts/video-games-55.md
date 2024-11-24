@@ -75,7 +75,7 @@ DBH 不是一个那么容许你自由选择的游戏，它的选项设置偶尔�
 
 > _我们是朋友吗？_
 
-![](/uploads/detroit_-become-human-2021_12_28-2_11_41.png)
+![](https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/uploads/detroit_-become-human-2021_12_28-2_11_41.png)
 
 说回《红弦俱乐部》。它的构想也很好看，调酒师和黑客捡到了一个阿卡拉机器人，介入一场“公司又想控制我”的社会事件。
 
@@ -111,4 +111,4 @@ Fin
 
 虽然大骂了一顿 DBH 但还是放上几张我很喜欢的截图。
 
-![](/uploads/detroit_-become-human-2021_12_28-0_51_38.png)![](/uploads/detroit_-become-human-2021_12_29-1_24_30.png)![](/uploads/detroit_-become-human-2021_12_29-0_30_26.png)![](/uploads/detroit_-become-human-2021_12_29-0_38_53.png)![](/uploads/detroit_-become-human-2021_12_29-0_38_23.png)![](/uploads/detroit_-become-human-2021_12_29-2_21_41.png)![](/uploads/detroit_-become-human-2021_12_29-2_30_58.png)
+![](https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/uploads/detroit_-become-human-2021_12_28-0_51_38.png)![](https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/uploads/detroit_-become-human-2021_12_29-1_24_30.png)![](https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/uploads/detroit_-become-human-2021_12_29-0_30_26.png)![](https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/uploads/detroit_-become-human-2021_12_29-0_38_53.png)![](https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/uploads/detroit_-become-human-2021_12_29-0_38_23.png)![](https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/uploads/detroit_-become-human-2021_12_29-2_21_41.png)![](https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/uploads/detroit_-become-human-2021_12_29-2_30_58.png)

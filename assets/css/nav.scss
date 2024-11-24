@@ -5,18 +5,20 @@
   --secondary: #fbe6e2;
   --accent: #ffbaf1;
   --text: #665566;
-  --window-bg: rgba(255, 255, 255, 0.95);
+  --window-bg: rgba(255, 255, 255, 0.85);
   --linkhover: #FC0;
+  --text-bg: #FFD09B;
   --trans-secondary: rgba(251, 230, 226, 0.46);
 }
 
 // dark mode
 body.dark-mode {
-  --primary: #C84B31;
+  --primary: #D14D72;
   --secondary: #343131;
   --accent: #3C3D37;
   --text: #ECDFCC;
-  --window-bg: rgba(18, 18, 18, 0.95);
+  --window-bg: rgba(18, 18, 18, 0.75);
+  --text-bg: #FFD09B;
   --linkhover: #FFD700;
   --trans-secondary: rgba(52, 49, 49, 0.62);
 }
@@ -41,7 +43,11 @@ body.dark-mode {
   box-sizing: border-box;
   scrollbar-color: var(--primary) var(--secondary);
   scrollbar-width: auto;
-  line-height: 1.6;
+  line-height: 1.7;
+}
+
+mark {
+  background-color: var(--text-bg);
 }
 
 body {
@@ -188,13 +194,17 @@ body {
   margin: 10px 0;
 }
 
-.content a,
+
 .page_article a,
 .page_posts a,
 .posts-list a {
   padding: 8px;
   text-decoration: none;
   color: var(--text);
+}
+
+.window-article .content a {
+  padding: 0px!important;
 }
 
 .page_article a, {
@@ -242,7 +252,7 @@ body {
   display: flex;
   align-items: center;
   gap: 15px;
-  background: var(--window-bg);
+  //background: var(--window-bg);
   //padding: 15px;
   border-radius: 10px;
   margin-bottom: 15px;
@@ -283,7 +293,6 @@ body {
   align-items: center;
   gap: 8px;
   padding: 8px;
-  background: var(--window-bg);
   border-radius: 8px;
   text-decoration: none;
   color: var(--text);
@@ -550,7 +559,7 @@ body {
 }
 
 #single_article .content p {
-  margin: 10px 0px;
+  margin: 15px 0px;
   font-size: 16px;
 }
 
@@ -582,10 +591,22 @@ body {
 .content h2,
 .content h3,
 .content h4 {
-  margin: 10px 0px;
+  margin: 20px 0px;
   //text-shadow: var(--linkhover) 1px 0 10px;
   color: var(--primary);
 }
+
+
+.content h2::before,
+.content h3::before,
+.content h4::before,
+.content h5::before,
+.content h6::before {
+  content: "# ";
+  color: var(--primary); /* 可选：设置颜色 */
+}
+
+
 
  .content ol {
   padding-left: 20px; /* 根据需求调整 */
@@ -657,4 +678,15 @@ blockquote ul {
 
 ul {
   list-style-type: none;
+}
+
+video {
+  border: 2px solid var(--bg1);
+  height: auto;
+  max-width: 100%;
+}
+
+.copyright {
+  font-size: 12px;
+  text-align: center;
 }
