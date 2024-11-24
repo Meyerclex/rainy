@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Thanks for all the cats! on 再會，謝謝所有的魚</title>
-    <link>https://gregueria.icu/host/</link>
+    <link>http://localhost:1313/host/</link>
     <description>Recent content in Thanks for all the cats! on 再會，謝謝所有的魚</description>
     <generator>Hugo</generator>
-    <language>en-us</language>
-    <atom:link href="https://gregueria.icu/host/index.xml" rel="self" type="application/rss+xml" />
+    <language>zh-cn</language>
+    <atom:link href="http://localhost:1313/host/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

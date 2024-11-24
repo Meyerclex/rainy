@@ -1,7 +1,8 @@
 baseURL = 'https://gregueria.icu/'
-languageCode = 'en-us'
+languageCode = 'zh-cn'
 title = '再會，謝謝所有的魚'
 theme = 'nostyleplease'
+defaultContentLanguage = "zh"
 
 [markup]
 [markup.goldmark]
