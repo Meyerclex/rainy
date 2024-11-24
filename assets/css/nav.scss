@@ -518,8 +518,7 @@ body {
     left: 10px !important;
     width: calc(100% - 20px) !important; /* 动态计算宽度 */
     min-width: 340px; /* 如果需要限制最大宽度 */
-    max-height: calc(100vh - 50px) !important; /* 高度：屏幕高度减去150px */
-
+    max-height: calc(100vh - 90px) !important; /* 高度：屏幕高度减去150px */
   }
 
   .menu {
