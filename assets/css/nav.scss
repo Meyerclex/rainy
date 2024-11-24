@@ -78,6 +78,10 @@ body {
   max-width: 180px; /* 限制每列的最大宽度 */
 }
 
+#page_posts {
+  z-index: 10;
+}
+
 .desktop-icon {
   width: 80px; /* 设置每个图标的宽度 */
   height: 90px;
@@ -509,15 +513,19 @@ body {
 
 
 @media screen and (max-width: 600px) {
- .window {
-   top: 10px!important;
-   left: 90px!important;
-   width: 330px!important;
- }
+  .window {
+    top: 50px !important;
+    left: 10px !important;
+    width: calc(100% - 20px) !important; /* 动态计算宽度 */
+    min-width: 340px; /* 如果需要限制最大宽度 */
+    max-height: calc(100vh - 50px) !important; /* 高度：屏幕高度减去150px */
+
+  }
 
   .menu {
     flex-wrap: wrap; /* 允许内容换行 */
     gap: 15px; /* 控制子元素间距 */
+    bottom: 30px;
   }
 
   .index-window {
@@ -535,6 +543,12 @@ body {
     left: 10px; /* 靠左对齐 */
     transform: none; /* 移除水平居中的变换 */
   }
+
+  #single_article .window-title {
+    font-size: 14px!important;
+    padding: 6px 12px!important;
+  }
+
 }
 
 .page_posts {
