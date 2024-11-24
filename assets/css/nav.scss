@@ -515,13 +515,26 @@ body {
    width: 330px!important;
  }
 
+  .menu {
+    flex-wrap: wrap; /* 允许内容换行 */
+    gap: 15px; /* 控制子元素间距 */
+  }
+
   .index-window {
     top: 200px !important;
     left: 50% !important; /* 使它在水平居中 */
     width: 90% !important; /* 调整宽度为页面宽度的90% */
     transform: translateX(-50%) !important; /* 水平居中 */
   }
-
+  .menu {
+    justify-content: center; /* 居中对齐换行后的内容 */
+    padding: 15px 10px; /* 调整内边距 */
+    gap: 10px; /* 缩小间距 */
+    border-radius: 15px; /* 减小圆角 */
+    width: calc(100% - 20px); /* 避免超出屏幕 */
+    left: 10px; /* 靠左对齐 */
+    transform: none; /* 移除水平居中的变换 */
+  }
 }
 
 .page_posts {
