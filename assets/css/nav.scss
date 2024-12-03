@@ -723,16 +723,18 @@ video {
 
 
 #feed-reader {
-    padding: .5em;
+    padding: .4em;
     background-color: azure;
-    border: 1px solid midnightblue;
+    border: 0px solid midnightblue;
 }
+
 .statuscafe-username {
     margin-bottom: .5em;
       color: var(--text);
     text-shadow:  var(--linkhover) 1px 0 10px;
       text-decoration: none;
 }
+
 .statuscafe-content {
     margin: 0 1em 0.5em 1em;
 }
