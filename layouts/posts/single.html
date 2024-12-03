@@ -9,7 +9,7 @@
 
 <div id="single_article" class="window active page_article" style="z-index: 1000;">
     <div class="window-title" style="display: flex; justify-content: space-between; align-items: center;">
-        <div class="title" style="flex: 1; text-align: left;">🍟 {{ .Title }} 🍟</div>
+        <div class="title" style="flex: 1; text-align: left;">{{ .Title }}</div>
         <div class="right-content" style="display: flex; align-items: center; gap: 10px;">
             <time class="post-meta" datetime="{{ .Date }}">
                 {{ .Date | time.Format site.Params.theme_config.date_format }}
