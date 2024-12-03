@@ -57,9 +57,9 @@ avatar = "/icons/light7.gif"
 window_id = "guest_book"
 
 [[params.desktopicon]]
-title = "Library"
+title = "Cafe"
 avatar = "/icons/cat32.gif"
-window_id = "library"
+window_id = "cafe"
 
 [[params.desktopicon]]
 title = "Changelog"
