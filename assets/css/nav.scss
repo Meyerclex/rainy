@@ -720,17 +720,19 @@ video {
   text-align: center;
 }
 
-#statuscafe {
+
+
+#feed-reader {
     padding: .5em;
     background-color: azure;
     border: 1px solid midnightblue;
 }
-#statuscafe-username {
+.statuscafe-username {
     margin-bottom: .5em;
-    text-decoration: none;
-    color: var(--text);
+      color: var(--text);
     text-shadow:  var(--linkhover) 1px 0 10px;
+      text-decoration: none;
 }
-#statuscafe-content {
+.statuscafe-content {
     margin: 0 1em 0.5em 1em;
 }
