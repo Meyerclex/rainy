@@ -97,12 +97,11 @@
                 <div class="button" style="background: #ff6b6b;" onclick="closeWindow('cafe')"></div>
             </div>
         </div>
-        <div class="content" style="max-height: 250px; overflow-y: scroll;">
+        <div class="content" style="max-height: 350px; overflow-y: scroll;">
             <div id='feed-reader'></div>
 <script>
   const feedURL = 'https://status.cafe/users/lyin.atom';
 
-  // 函数：将日期转换为相对时间
   function timeAgo(publishedDate) {
     const now = new Date();
     const published = new Date(publishedDate);
