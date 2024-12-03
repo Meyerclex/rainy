@@ -98,8 +98,31 @@
             </div>
         </div>
         <div class="content" style="max-height: 250px; overflow-y: scroll;">
-            <div id="statuscafe">
-                <div id="statuscafe-username"></div><div id="statuscafe-content"></div></div><script src="https://status.cafe/current-status.js?name=lyin" defer></script>
+
+  <div id='statuscafe'></div>
+  <script>
+    const feedURL = 'https://status.cafe/users/lyin.atom';
+    fetch(feedURL)
+      .then(response => response.text())
+      .then(str => new window.DOMParser().parseFromString(str, "text/xml"))
+      .then(data => {
+        const entries = data.querySelectorAll("entry");
+        let html = ``;
+        entries.forEach(el => {
+          let title = el.querySelector("title").innerHTML.slice(0, 4).trim();
+          let content = el.querySelector("content").textContent.trim();
+          let dateString = el.querySelector("published").innerHTML.slice(0, 10);
+          html += `
+              <p>${title} - ${dateString}</p>
+              <p>${content}</p>
+            `;
+        })
+        document.getElementById("feed-reader").innerHTML = html;
+      })
+  </script>
+
+
+            
         </div>
     </div>
 
