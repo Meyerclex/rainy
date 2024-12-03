@@ -1,7 +1,14 @@
+## 2024/12/03
+
+新增了Cafe页面，用的是[Status Cafe]()挂件。
+
+参考了这个教程：[Creating a Feed Reader from StatusCafe
+](https://bechnokid.neocities.org/resources/tut_statuscafefeed)
+
 ## To do List
 
 - [ ] 继续施工完善页面
-- [ ] 好好学习一下如何适配移动端
+- [x] 好好学习一下如何适配移动端
 - [ ] 修改夜晚主题配色
 - [ ] 写一下装修笔记
 
