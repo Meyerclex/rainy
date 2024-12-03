@@ -725,7 +725,7 @@ video {
 #feed-reader {
     padding: .4em;
     background-color: azure;
-    border: 1px solid var(--text);
+    // border: 1px solid var(--text);
 }
 
 .statuscafe-username {
@@ -740,8 +740,12 @@ video {
     margin: 0 1em 0.5em 1em;
 }
 
-.statuscafe-divider {
-    width: 33%; /* 分割线宽度为33% */
-    margin: 10px auto; /* 自动水平居中 */
-    border-bottom: 1px solid var(--text); /* 使用现有CSS变量设置颜色 */
+.statuscafe-entry {
+    border: 1px solid var(--text); /* 每条状态有独立边框 */
+    // border-radius: 5px; /* 边框圆角效果，可选 */
+    padding: 2px; /* 状态内容内部间距 */
+    margin-bottom: 10px; /* 状态间距 */
+    // background-color: white; /* 每条状态背景为白色，与整体背景区分 */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 添加轻微阴影提升视觉效果 */
 }
+
