@@ -725,16 +725,23 @@ video {
 #feed-reader {
     padding: .4em;
     background-color: azure;
-    border: 0px solid midnightblue;
+    border: 1px solid var(--text);
 }
 
 .statuscafe-username {
     margin-bottom: .5em;
-      color: var(--text);
-    text-shadow:  var(--linkhover) 1px 0 10px;
-      text-decoration: none;
+    color: var(--text);
+    // text-shadow:  var(--linkhover) 1px 0 10px;
+    text-decoration: none;
+    font-weight: bold; 
 }
 
 .statuscafe-content {
     margin: 0 1em 0.5em 1em;
+}
+
+.statuscafe-divider {
+    width: 33%; /* 分割线宽度为33% */
+    margin: 10px auto; /* 自动水平居中 */
+    border-bottom: 1px solid var(--text); /* 使用现有CSS变量设置颜色 */
 }
