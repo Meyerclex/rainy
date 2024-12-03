@@ -58,7 +58,7 @@ window_id = "guest_book"
 
 [[params.desktopicon]]
 title = "Cafe"
-avatar = "/icons/cat32.gif"
+avatar = "/icons/bread7.gif"
 window_id = "cafe"
 
 [[params.desktopicon]]
