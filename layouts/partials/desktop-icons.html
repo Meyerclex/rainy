@@ -109,7 +109,7 @@
         const entries = data.querySelectorAll("entry");
         let html = ``;
         entries.forEach(el => {
-          let title = el.querySelector("title").innerHTML.slice(0, 4).trim();
+          let title = el.querySelector("title").innerHTML.slice(0, 7).trim();
           let content = el.querySelector("content").textContent.trim();
           let dateString = el.querySelector("published").innerHTML.slice(0, 10);
           html += `
