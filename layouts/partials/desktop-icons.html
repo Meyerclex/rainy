@@ -98,7 +98,7 @@
             </div>
         </div>
         <div class="content" style="max-height: 350px; overflow-y: scroll;">
-            <div id='feed-reader'></div>
+<div id="feed-reader"></div>
 <script>
   const feedURL = 'https://status.cafe/users/lyin.atom';
 
@@ -133,17 +133,19 @@
         let title = el.querySelector("title").innerHTML.slice(0, 7).trim(); 
         let content = el.querySelector("content").textContent.trim();
         let publishedDate = el.querySelector("published").innerHTML;
-        let relativeTime = timeAgo(publishedDate); // 使用 timeAgo 函数计算相对时间
+        let relativeTime = timeAgo(publishedDate);
 
         html += `
+          <div class="statuscafe-entry">
             <p class="statuscafe-username">${title} - ${relativeTime}</p>
             <p class="statuscafe-content">${content}</p>
-            <div class="statuscafe-divider"></div>
-          `;
+          </div>
+        `;
       });
       document.getElementById("feed-reader").innerHTML = html;
     });
 </script>
+
         
         </div>
     </div>
