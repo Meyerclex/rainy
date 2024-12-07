@@ -6,7 +6,7 @@ toc: false
 comments: true
 ---
 
-- [Missing](https://www.missingid.cloud/) / 是我厉害的友友Missing！但链接失联中。我在静静地等待她回来，再等不到就要去敲门了！
+- [Missing](https://www.missingid.online/) / Missing | 恭喜我的友友宝宝重新点亮新域名！（快写（戳
 
 - [Mengru](https://mengru.space/) / 她的空间很棒，有又妙又可爱的画作与工具，还有她的摄影。
 
