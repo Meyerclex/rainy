@@ -38,8 +38,8 @@ social = [
     { name = "Archive of Our Own", url = "https://archiveofourown.org/users/timuk", avatar = "/icons/paper5.gif" },
     { name = "Fanfic Blog", url = "https://written.gregueria.icu/", avatar = "/icons/light4.gif" },
 ]
-site_info_title = "About My Site ⛳"
-site_info_description = '网友，你好！在大装修以后，我也不知道我的站点会在哪里出现问题。建议在网页端进行浏览。<br>至于什么时候能够适配移动端，要根据我网页知识学习进度而定。'
+site_info_title = "More... ⛳"
+site_info_description = "說謊者心中敵對的，並不是誠實的人。說謊者想鏟除的，不是別人，正是小說家。<br><p style=\"text-align: right;\">《永別書：在我不在的時代》</p>"
 
 [[params.desktopicon]]
 title = "Blog"

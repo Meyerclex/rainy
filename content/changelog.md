@@ -1,3 +1,11 @@
+---
+title: 💎站点更新日志 Changelog
+description:
+date: 2021-06-28
+slug: changelog
+toc: true
+---
+
 ## 2024/12/03
 
 新增了Cafe页面，用的是[Status Cafe]()挂件。

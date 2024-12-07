@@ -64,16 +64,21 @@
 
     <div id="friends" class="window" style="top: 100px; left: 550px;">
         <div class="window-title">
-            🎉 Friends 🎉
+            ⛳ Friends ⛳
             <div class="buttons">
                 <div class="button" style="background: #ffff4d;" onclick="minimizeWindow('friends')"></div>
                 <div class="button" style="background: #ff6b6b;" onclick="closeWindow('friends')"></div>
             </div>
         </div>
         <div class="content">
-            {{ $friends_content := readFile "content/Links - 副本.md" | safeHTML }}
-            {{ $friends_content | markdownify }}
+            {{ with site.GetPage "links" }}
+                <h2>{{ .Title }}</h2> <!-- 从 Front Matter 直接读取 title -->
+                {{ .Content | safeHTML }}
+            {{ else }}
+                <p>无法加载链接内容。</p>
+            {{ end }}
         </div>
+
     </div>
 
     <div id="guest_book" class="window" style="top: 70px; left: 650px;">
@@ -89,7 +94,7 @@
         </div>
     </div>
 
-    <div id="cafe" class="window" style="top: 300px; left: 250px;">
+    <div id="cafe" class="window" style="top: 170px; left: 250px;">
         <div class="window-title">
             ☕ Cafe ☕
             <div class="buttons">
@@ -159,9 +164,13 @@
             </div>
         </div>
         <div class="content" style="max-height: 250px; overflow-y: scroll;">
-                {{ $friends_content := readFile "content/changelog.md" | safeHTML }}
-                {{ $friends_content | markdownify }}
+            {{ with site.GetPage "changelog" }}
+                {{ .Content | safeHTML }}
+            {{ else }}
+                <p>404 Not Found</p>
+            {{ end }}
         </div>
+    </div>
     </div>
 
 {{ end }}

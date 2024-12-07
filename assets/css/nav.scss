@@ -9,19 +9,25 @@
   --linkhover: #FC0;
   --text-bg: #FFD09B;
   --trans-secondary: rgba(251, 230, 226, 0.46);
+
 }
 
 // dark mode
 body.dark-mode {
-  --primary: #D14D72;
+  --primary: #78B7D0;
   --secondary: #343131;
   --accent: #3C3D37;
   --text: #ECDFCC;
   --window-bg: rgba(18, 18, 18, 0.85);
   --text-bg: #FFD09B;
-  --linkhover: #FFD700;
+  --linkhover: #FFD09B;
   --trans-secondary: rgba(52, 49, 49, 0.62);
+
+  background: url('/site/wp.png') no-repeat center center fixed;
+  background-size: cover;
 }
+
+
 
 #toggle-theme {
   position: fixed; /* 固定位置 */
@@ -134,10 +140,6 @@ body {
   display: none;
 }
 
-.window-title {
-  cursor: move;
-}
-
 #blog.window {
   width: 500px;
 }
@@ -151,6 +153,7 @@ body {
 }
 
 .window-title {
+  cursor: move;
   background: var(--primary);
   color: white;
   padding: 8px 15px;

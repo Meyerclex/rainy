@@ -1,21 +1,74 @@
-{{ define "main" }}
-{{ partial "back_link.html" .}}
+{{/*{{ define "main" }}*/}}
+{{/*{{ partial "back_link.html" .}}*/}}
+{{/**/}}
+{{/*<article>*/}}
+{{/*    <p class="post-meta">*/}}
+{{/*        <time datetime="{{ .Date }}">*/}}
+{{/*            {{ .Date | time.Format site.Params.theme_config.date_format }}*/}}
+{{/*        </time>*/}}
+{{/*    </p>*/}}
+{{/**/}}
+{{/*    <h1>{{ .Title }}</h1>*/}}
+{{/**/}}
+{{/*    {{ if .Params.toc }}*/}}
+{{/*        <aside {{ if .Params.tocBorder }} class="toc" {{ end }}>*/}}
+{{/*            {{ .TableOfContents }}*/}}
+{{/*        </aside>*/}}
+{{/*    {{ end }}*/}}
+{{/**/}}
+{{/*    {{ .Content }}*/}}
+{{/*</article>*/}}
+{{/*{{ end }}*/}}
 
-<article>
-    <p class="post-meta">
-        <time datetime="{{ .Date }}">
-            {{ .Date | time.Format site.Params.theme_config.date_format }}
-        </time>
-    </p>
 
-    <h1>{{ .Title }}</h1>
+{{- partial "desktop-head.html" . -}}
+{{ partial "desktop-icons.html" . }}
+{{ partial "desktop-menu.html" . }}
+<script src="https://unpkg.com/@waline/client@v2/dist/waline.js"></script>
+<link
+        rel="stylesheet"
+        href="https://unpkg.com/@waline/client@v2/dist/waline.css"
+/>
 
-    {{ if .Params.toc }}
-        <aside {{ if .Params.tocBorder }} class="toc" {{ end }}>
-            {{ .TableOfContents }}
-        </aside>
-    {{ end }}
+<div id="single_article" class="window active page_article" style="z-index: 1000;">
+    <div class="window-title" style="display: flex; justify-content: space-between; align-items: center;">
+        <div class="title" style="flex: 1; text-align: left;">{{ .Title }}</div>
+        <div class="right-content" style="display: flex; align-items: center; gap: 10px;">
+            <time class="post-meta" datetime="{{ .Date }}">
+                {{ .Date | time.Format site.Params.theme_config.date_format }}
+            </time>
+            <div class="buttons">
+                <div class="button" style="background: #ffff4d;" onclick="window.location.href='/home'"></div>
+                <div class="button" style="background: #ff6b6b;" onclick="history.back()"></div>
+            </div>
+        </div>
+    </div>
 
-    {{ .Content }}
-</article>
-{{ end }}
+    <div class="window-article">
+        <article class="content">
+            {{ if not (eq .Params.toc false) }}
+                <details class="toc" close style="display: block; margin: 0 auto; width: fit-content;">
+                    <summary style="text-align: left;">
+                        Table of Content
+                    </summary>
+                    <div id="toc" style="text-align: left;">
+                        <aside {{ if .Params.tocBorder }} {{ end }}>
+                            {{ .TableOfContents }}
+                        </aside>
+                    </div>
+                </details>
+                <hr>
+            {{ end }}
+            {{ .Content }}
+            <br>
+            <img src="/site/ghostszombies.gif" class="divider" style="display: block; margin-left: auto; margin-right: auto;" />
+            <div id="comments" class="comments">
+                {{ partial "comment.html" . }}
+            </div>
+        </article>
+
+    </div>
+
+</div>
+
+{{ partial "desktop-footer.html" . }}
