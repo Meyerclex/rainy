@@ -1,19 +1,14 @@
 @import url("https://static.zeoseven.com/zsft/279/main/result.css");
 
 :root {
-  --primary: #D14D72;
-  --secondary: #fbe6e2;
-  --accent: #ffbaf1;
-  --text: #665566;
-  --window-bg: rgba(255, 255, 255, 0.92);
-  --linkhover: #FC0;
-  --text-bg: #FFD09B;
-  --trans-secondary: rgba(251, 230, 226, 0.46);
-
-}
-
-// dark mode
-body.dark-mode {
+  //--primary: #D14D72;
+  //--secondary: #fbe6e2;
+  //--accent: #ffbaf1;
+  //--text: #665566;
+  //--window-bg: rgba(255, 255, 255, 0.92);
+  //--linkhover: #FC0;
+  //--text-bg: #FFD09B;
+  //--trans-secondary: rgba(251, 230, 226, 0.46);
   --primary: #78B7D0;
   --secondary: #343131;
   --accent: #3C3D37;
@@ -22,11 +17,47 @@ body.dark-mode {
   --text-bg: #FFD09B;
   --linkhover: #FFD09B;
   --trans-secondary: rgba(52, 49, 49, 0.62);
+}
 
+body {
   background: url('/site/wp.png') no-repeat center center fixed;
   background-size: cover;
 }
 
+// dark mode
+body.dark-mode {
+  --primary: #D14D72;
+  --secondary: #fbe6e2;
+  --accent: #ffbaf1;
+  --text: #665566;
+  --window-bg: rgba(255, 255, 255, 0.92);
+  --linkhover: #FC0;
+  --text-bg: #FFD09B;
+  --trans-secondary: rgba(251, 230, 226, 0.46);
+  //background-image:
+  //        radial-gradient(#fff 20%, transparent 20%),
+  //        radial-gradient(#fff 20%, transparent 20%);
+  //background-position: 0 0, 50px 50px;
+  //background-size: 100px 100px;
+  //--primary: #78B7D0;
+  //--secondary: #343131;
+  //--accent: #3C3D37;
+  //--text: #ECDFCC;
+  //--window-bg: rgba(18, 18, 18, 0.85);
+  //--text-bg: #FFD09B;
+  //--linkhover: #FFD09B;
+  //--trans-secondary: rgba(52, 49, 49, 0.62);
+  //background: url('/site/wp.png') no-repeat center center fixed;
+  //background-size: cover;
+}
+
+body.dark-mode {
+  background-color: var(--secondary);
+  font-family: LXGWWenKai, 'Comic Sans MS', cursive;
+  overflow-x: hidden;
+  min-height: 100vh;
+  background-image: none;
+}
 
 
 #toggle-theme {
@@ -64,8 +95,8 @@ body {
   //background-image:
   //        radial-gradient(#fff 20%, transparent 20%),
   //        radial-gradient(#fff 20%, transparent 20%);
-  background-position: 0 0, 50px 50px;
-  background-size: 100px 100px;
+  //background-position: 0 0, 50px 50px;
+  //background-size: 100px 100px;
 }
 
 ::selection {

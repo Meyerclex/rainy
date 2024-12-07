@@ -10,7 +10,7 @@
     
     
     
-    <link rel="stylesheet" href="/css/nav.d90ac5eddf4f01f228749a4c8d14dabd89f2c772272fcc04fb0de75e0c336b0985510768be7ff0c20aa42f8e3c8aca03fdeac06971f9deac863f69c492d6ea45.css" integrity="sha512-2QrF7d9PAfIodJpMjRTavYnyx3InL8wE&#43;w3nXgwzawmFUQdovn/wwgqkL448isoD/erAaXH53qyGP2nEktbqRQ==" />
+    <link rel="stylesheet" href="/css/nav.a4bcd1a32f8c071d0c3cbc3803c3ed3af2efe103df03b15b31b4b91bc24f3b8d094d21ee4fab6f7a6025ef768ad4505e8c2fbd791aae501a36e7e4f93fb92d0e.css" integrity="sha512-pLzRoy&#43;MBx0MPLw4A8PtOvLv4QPfA7FbMbS5G8JPO40JTSHuT6tvemAl73aK1FBejC&#43;9eRquUBo25&#43;T5P7ktDg==" />
     
 </head>
 <div class="desktop-icons">
@@ -2918,11 +2918,13 @@
     
     document.addEventListener('DOMContentLoaded', () => {
         const savedTheme = localStorage.getItem('theme');
-        if (savedTheme === 'dark') {
+
+        
+        if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
             document.body.classList.add('dark-mode');
+            localStorage.setItem('theme', 'dark'); 
         }
     });
-
 </script>
 <script>
     var s1 = '2021-11-12';

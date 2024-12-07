@@ -183,11 +183,13 @@
     // 页面加载时检查用户偏好
     document.addEventListener('DOMContentLoaded', () => {
         const savedTheme = localStorage.getItem('theme');
-        if (savedTheme === 'dark') {
+
+        // 默认加载为 dark 模式
+        if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
             document.body.classList.add('dark-mode');
+            localStorage.setItem('theme', 'dark'); // 如果没有保存过主题，默认保存为dark
         }
     });
-
 </script>
 <script>
     var s1 = '2021-11-12';//设置为建站时间

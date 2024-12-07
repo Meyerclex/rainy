@@ -11,7 +11,7 @@ unsafe = true
 
 
 [params.theme_config]
-appearance = "light"  # 或 "light"，"dark"
+appearance = "dark"  # 或 "light"，"dark"
 
 [params]
 warning = """
