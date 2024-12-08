@@ -39,7 +39,7 @@ social = [
     { name = "Fanfic Blog", url = "https://written.gregueria.icu/", avatar = "/icons/light4.gif" },
 ]
 site_info_title = "More... ⛳"
-site_info_description = "說謊者心中敵對的，並不是誠實的人。說謊者想鏟除的，不是別人，正是小說家。<br><p style=\"text-align: right;\">《永別書：在我不在的時代》</p>"
+site_info_description = "說謊者心中敵對的，並不是誠實的人。說謊者想鏟除的，不是別人，正是小說家。<br><br><p style=\"text-align: right;\">——《永別書：在我不在的時代》</p>"
 
 [[params.desktopicon]]
 title = "Blog"
