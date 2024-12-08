@@ -32,7 +32,7 @@ title = "Profile"
 avatar = "/cat/cat69.gif"
 profile_picture = "/cat/tuxicon2.gif"
 profile_name = "鱼鱼 | She/her | Ace & Aro"
-profile_descrpition = "🤍 您的奶牛猫图片转发使者<br>💜 狂爱猫狗塑同人女一枚<br>🖤 曾成功安利125位路过网友观看电影《无间道2》"
+profile_descrpition = "🤍 您的奶牛猫图片转发大使<br>💜 狂爱猫狗塑同人女一枚<br>🖤 曾成功安利125位路过网友观看电影《无间道2》"
 window_id = "profile"  # 对应的窗口 ID
 social = [
     { name = "Archive of Our Own", url = "https://archiveofourown.org/users/timuk", avatar = "/icons/paper5.gif" },
