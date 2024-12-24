@@ -6,14 +6,7 @@ slug: changelog
 toc: true
 ---
 
-## 2024/12/03
-
-新增了Cafe页面，用的是[Status Cafe]()挂件。
-
-参考了这个教程：[Creating a Feed Reader from StatusCafe
-](https://bechnokid.neocities.org/resources/tut_statuscafefeed)
-
-## To do List
+## TODO
 
 - [x] 适配移动端（只能说微微适配啦…）
 - [x] 修改夜晚主题配色
@@ -21,6 +14,13 @@ toc: true
 - [ ] 修改鼠标指针
 - [ ] 修改表格之类的基础样式问题
 - [ ] 增加一个喜报通知条幅（这什么东西？）
+
+## 2024/12/03
+
+新增了Cafe页面，用的是[Status Cafe]()挂件。
+
+参考了这个教程：[Creating a Feed Reader from StatusCafe
+](https://bechnokid.neocities.org/resources/tut_statuscafefeed)
 
 ## 2024/11/23
 
